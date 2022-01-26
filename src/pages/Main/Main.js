@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Main = () => {
-  return <div>Jogho</div>;
+  // return (
+  //   <MainWrapper>
+  //     <Category />
+  //     <StyleRanking />
+  //   </MainWrapper>
+  // );
 };
 
 export default Main;
