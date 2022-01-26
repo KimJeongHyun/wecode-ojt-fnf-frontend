@@ -18,6 +18,7 @@ const monoColors = {
 const pointColors = {
   blue: '#377ef9',
   lightBlue: '#b0c8e8',
+  hoverBlue: '#59bfff',
   green: '#377ef9',
   lightGreen: '#bee1d8',
   indigo: '#31415f',
