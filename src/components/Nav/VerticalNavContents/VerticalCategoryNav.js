@@ -28,7 +28,8 @@ export default function VerticalCategoryNav() {
   };
 
   const [isBtnClicked, setIsBtnClicked] = useState({
-    검색량: true,
+    all: true,
+    검색량: false,
     판매재고: false,
     유통채널: false,
   });
