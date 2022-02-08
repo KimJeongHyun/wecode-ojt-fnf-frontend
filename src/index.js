@@ -10,11 +10,13 @@ import theme from './styles/theme';
 import mixin from './styles/mixin';
 
 ReactDOM.render(
-  <RecoilRoot>
+  <>
     <GlobalStyle />
     <ThemeProvider theme={{ ...theme, ...mixin }}>
-      <Router />
+      <RecoilRoot>
+        <Router />
+      </RecoilRoot>
     </ThemeProvider>
-  </RecoilRoot>,
+  </>,
   document.getElementById('root')
 );

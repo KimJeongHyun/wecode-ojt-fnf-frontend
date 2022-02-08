@@ -5,8 +5,9 @@ const Main = () => {
   return <MainWrapper>Jogho</MainWrapper>;
 };
 
-const MainWrapper = styled.div`
-  padding-left: 4.8vw;
+const MainWrapper = styled.main`
+  width: 100vw;
+  height: 100vh;
 `;
 
 export default Main;
