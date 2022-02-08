@@ -18,7 +18,6 @@ export default function VerticalNav() {
   const themeContext = useContext(ThemeContext);
 
   const userSelectedArea = useRecoilValue(selectedArea);
-
   const [isNavActive, setIsNavActive] = useState(false);
 
   const toggleNav = () => {
@@ -33,6 +32,7 @@ export default function VerticalNav() {
       <NavToggleButton onClick={toggleNav} monoColors={themeContext.monoColors}>
         {isNavActive ? <AiOutlineDoubleLeft /> : <AiOutlineDoubleRight />}
       </NavToggleButton>
+
       <NavContainer toggleNav={isNavActive}>
         {sideComps[userSelectedArea]}
       </NavContainer>

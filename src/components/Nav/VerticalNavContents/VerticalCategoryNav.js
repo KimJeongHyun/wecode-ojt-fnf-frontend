@@ -1,4 +1,5 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
+import useVerticalNavClick from './hook/useVerticalNavClick';
 
 import styled, { ThemeContext } from 'styled-components';
 
@@ -7,32 +8,13 @@ const categoryBtnType = {
   2: '검색량',
   3: '판매재고',
   4: '유통채널',
+  5: '초기화',
 };
 
 export default function VerticalCategoryNav() {
   const themeContext = useContext(ThemeContext);
 
-  const handleBtnClick = e => {
-    const name = e.target.getAttribute('name');
-    setIsBtnClicked(current => {
-      const initObj = { ...current };
-      const keys = Object.keys(current);
-
-      for (let i = 0; i < keys.length; i++) {
-        initObj[keys[i]] = false;
-      }
-
-      initObj[name] = true;
-      return initObj;
-    });
-  };
-
-  const [isBtnClicked, setIsBtnClicked] = useState({
-    all: true,
-    검색량: false,
-    판매재고: false,
-    유통채널: false,
-  });
+  const { isBtnClicked, handleBtnClick } = useVerticalNavClick();
 
   return (
     <>
@@ -64,6 +46,7 @@ const NavButton = styled.div`
   border-radius: 5px;
   background-color: ${props =>
     props.isBtnClicked ? props.pointColors.lightBlue : props.monoColors.gray};
+
   &:hover {
     background-color: ${props =>
       props.isBtnClicked
