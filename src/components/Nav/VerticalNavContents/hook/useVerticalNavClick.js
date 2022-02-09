@@ -1,6 +1,8 @@
 import { useState } from 'react';
-
 import { useLocation } from 'react-router-dom';
+
+import { useSetRecoilState } from 'recoil';
+import { selectedSideMenu } from '../../../../atom/sideMenu';
 
 const BTN_CLICKED_STATUS = {
   '/category': {
@@ -19,23 +21,7 @@ export default function useVerticalNavClick() {
     BTN_CLICKED_STATUS[location.pathname]
   );
 
-  const handleBtnClick = e => {
-    const name = e.target.getAttribute('name');
-
-    name === '초기화'
-      ? initBtns()
-      : setIsBtnClicked(current => {
-          const initObj = { ...current };
-          const keys = Object.keys(current);
-
-          for (let i = 0; i < keys.length; i++) {
-            initObj[keys[i]] = false;
-          }
-
-          initObj[name] = true;
-          return initObj;
-        });
-  };
+  const setSelectedSideMenu = useSetRecoilState(selectedSideMenu);
 
   const initBtns = () => {
     const prevObj = { ...isBtnClicked };
@@ -46,8 +32,30 @@ export default function useVerticalNavClick() {
         return objEach;
       })
     );
-
     setIsBtnClicked(initObj);
+    setSelectedSideMenu('all');
+  };
+
+  const updateBtnClicked = name => {
+    setIsBtnClicked(current => {
+      const initObj = { ...current };
+      const keys = Object.keys(current);
+
+      for (let i = 0; i < keys.length; i++) {
+        initObj[keys[i]] = false;
+      }
+
+      initObj[name] = true;
+      return initObj;
+    });
+
+    setSelectedSideMenu(name);
+  };
+
+  const handleBtnClick = e => {
+    const name = e.target.getAttribute('name');
+
+    name === '초기화' ? initBtns() : updateBtnClicked(name);
   };
 
   return { isBtnClicked, handleBtnClick };
