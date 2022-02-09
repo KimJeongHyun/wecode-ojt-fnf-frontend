@@ -312,10 +312,10 @@ export default function SearchNormalChart() {
           <LineChart
             data={normalChart}
             margin={{
-              top: 10,
-              right: 30,
+              top: 50,
+              right: 20,
               left: 20,
-              bottom: 5,
+              bottom: 50,
             }}
           >
             <CartesianGrid horizontal={false} stroke="#efefef" />
@@ -366,10 +366,18 @@ export default function SearchNormalChart() {
 const ChartWrapper = styled.div`
   width: 26vw;
   height: 100%;
-  padding: 20px;
+  /* padding: 20px; */
 `;
 
 const ChartTitle = styled.div`
-  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 24px 14px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  background-color: #377ef9;
+  border-radius: 7px 7px 0 0;
   margin-bottom: 30px;
+  /* font-size: 18px; */
 `;

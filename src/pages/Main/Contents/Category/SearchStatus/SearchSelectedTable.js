@@ -136,6 +136,8 @@ export default function SearchSelectedTable() {
 
 const TableWrapper = styled.div`
   width: 30vw;
+  height: 30vh;
+  padding: 10px 0 10px 10px;
 `;
 
 const TableTitle = styled.div`

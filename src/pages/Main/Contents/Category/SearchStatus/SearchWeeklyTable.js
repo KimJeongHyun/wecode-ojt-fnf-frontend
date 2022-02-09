@@ -1,15 +1,17 @@
 import React from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-import { dataStringFormatter } from '../../../../../utils/Functions';
+import { BiDotsHorizontalRounded } from 'react-icons/bi';
 
-import styled from 'styled-components';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { dataStringFormatter } from '../../../../../utils/Functions';
 import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
   TableRow,
+  Paper,
 } from '@material-ui/core';
 
 const SearchCountTable = [
@@ -93,7 +95,15 @@ const SearchCountTable = [
   },
 ];
 
+const useStyles = makeStyles({
+  table: {
+    minWidth: 500,
+  },
+});
+
 export default function SearchWeeklyTable() {
+  const classes = useStyles();
+
   return (
     <Scrollbars
       autoHideTimeout={500}
@@ -101,17 +111,20 @@ export default function SearchWeeklyTable() {
       autoHeight
       autoHeightMin={`${42}vh`}
     >
-      <TableWrapper>
-        <TableTitle>주간</TableTitle>
-        <Table size="small" style={{ padding: 0, margin: 0 }}>
-          <TableHead>
-            <TableRow>
-              <TableCell align="left">브랜드</TableCell>
-              <TableCell align="left">당해검색량</TableCell>
-              <TableCell align="left">전년검색량</TableCell>
-              <TableCell align="left">전년비</TableCell>
-            </TableRow>
-          </TableHead>
+      <TableWrapper component={Paper}>
+        <TableTitle>
+          주간
+          <BiDotsHorizontalRounded />
+        </TableTitle>
+        <Table className={classes.table} aria-label="customized table">
+          {/* <TableHeads> */}
+          <TableRow>
+            <TableHeaderCell>브랜드</TableHeaderCell>
+            <TableHeaderCell align="right">당해검색량</TableHeaderCell>
+            <TableHeaderCell align="right">전년검색량</TableHeaderCell>
+            <TableHeaderCell align="right">전년비</TableHeaderCell>
+          </TableRow>
+          {/* </TableHeads> */}
           <TableBody>
             {SearchCountTable.map(
               ({ competitor, growth, search_qty_cy, search_qty_py }) => {
@@ -119,10 +132,16 @@ export default function SearchWeeklyTable() {
                 const convertedPy = dataStringFormatter(search_qty_py);
                 return (
                   <TableRow key={competitor}>
-                    <TableCell align="left">{competitor}</TableCell>
-                    <TableCell align="left">{growth}%</TableCell>
-                    <TableCell align="left">{convertedCy}</TableCell>
-                    <TableCell align="left">{convertedPy}</TableCell>
+                    <StyledTableCell component="th" scope="row">
+                      {competitor}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">{growth}%</StyledTableCell>
+                    <StyledTableCell align="right">
+                      {convertedCy}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      {convertedPy}
+                    </StyledTableCell>
                   </TableRow>
                 );
               }
@@ -136,10 +155,35 @@ export default function SearchWeeklyTable() {
 
 const TableWrapper = styled.div`
   width: 30vw;
-  padding: 10px 0 10px 10px;
+`;
+const TableTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 24px 14px;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  background-color: #377ef9;
+  border-radius: 7px 7px 0 0;
 `;
 
-const TableTitle = styled.div`
-  padding: 0 0 10px 10px;
-  font-size: 18px;
-`;
+const StyledTableCell = withStyles({
+  root: {
+    color: '#31415F',
+    fontSize: '16px',
+  },
+})(TableCell);
+
+// const TableHeads = withStyles({
+//   root: {
+//     backgroundColor: '#377EF9',
+//   },
+// })(MuiTableHead);
+
+const TableHeaderCell = withStyles(theme => ({
+  root: {
+    fontSize: '16px',
+    color: '#31415F',
+    fontWeight: 700,
+  },
+}))(TableCell);
