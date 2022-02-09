@@ -12,3 +12,7 @@ export function clickBoolean(setState) {
     return !prev;
   });
 }
+
+export function dataStringFormatter(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}

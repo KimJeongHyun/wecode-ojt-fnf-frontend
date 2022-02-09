@@ -8,7 +8,6 @@ export default function ContentCard({ children }) {
 }
 
 const Card = styled.div`
-  border: 1px solid ${props => props.theme.cardColors.borderBlack};
   padding: 5px;
   border-radius: 7px;
   box-shadow: 1px 1px 10px ${props => props.theme.cardColors.borderSmoke};
