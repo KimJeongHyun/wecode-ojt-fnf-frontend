@@ -15,52 +15,103 @@ import {
 
 const data = [
   {
-    name: '21.12.12',
-    a: 13907,
-    b: 3781,
-    c: 5657,
-    pv: 9078,
-    lastYearSearch: 3113,
+    end_dt: '21.12.12',
+    sale_qty_kor_ttl: 122,
+    sale_qty_kor_ttl_py: 498,
+    sale_qty_kor_ttl_py2: 1628,
+    os: 0,
+    stor_qty_kor: 23385,
+    stock_qty_kor: 136167,
+    search_qty_cy: 9248,
+    search_qty_py: 12139,
   },
   {
-    name: '21.12.19',
-    a: 17016,
-    b: 5378,
-    c: 7246,
-    pv: 9050,
-    lastYearSearch: 2999,
+    end_dt: '21.12.19',
+    sale_qty_kor_ttl: 1227,
+    sale_qty_kor_ttl_py: 634,
+    sale_qty_kor_ttl_py2: 1321,
+    os: 1908,
+    stor_qty_kor: 16003,
+    stock_qty_kor: 150749,
+    search_qty_cy: 8411,
+    search_qty_py: 11971,
   },
   {
-    name: '21.12.26',
-    a: 29780,
-    b: 2605,
-    c: 5322,
-    pv: 9231,
-    lastYearSearch: 2845,
+    end_dt: '21.12.26',
+    sale_qty_kor_ttl: 7782,
+    sale_qty_kor_ttl_py: 1440,
+    sale_qty_kor_ttl_py2: 2454,
+    os: 1800,
+    stor_qty_kor: 6703,
+    stock_qty_kor: 149650,
+    search_qty_cy: 7759,
+    search_qty_py: 10782,
   },
   {
-    name: '22.01.02',
-    a: 19280,
-    b: 1374,
-    c: 4550,
-    pv: 10359,
-    lastYearSearch: 2858,
+    end_dt: '22.01.02',
+    sale_qty_kor_ttl: 12571,
+    sale_qty_kor_ttl_py: 3425,
+    sale_qty_kor_ttl_py2: 3060,
+    os: 200,
+    stor_qty_kor: 6845,
+    stock_qty_kor: 142427,
+    search_qty_cy: 7205,
+    search_qty_py: 10138,
   },
   {
-    name: '22.01.09',
-    a: 19699,
-    b: 3001,
-    c: 5155,
-    pv: 11340,
-    lastYearSearch: 3031,
+    end_dt: '22.01.09',
+    sale_qty_kor_ttl: 13588,
+    sale_qty_kor_ttl_py: 11840,
+    sale_qty_kor_ttl_py2: 6594,
+    os: 0,
+    stor_qty_kor: 6901,
+    stock_qty_kor: 131462,
+    search_qty_cy: 7314,
+    search_qty_py: 9856,
   },
   {
-    name: '22.01.16',
-    a: 18302,
-    b: 13907,
-    c: 3975,
-    pv: 10289,
-    lastYearSearch: 3330,
+    end_dt: '22.01.16',
+    sale_qty_kor_ttl: 9054,
+    sale_qty_kor_ttl_py: 12888,
+    sale_qty_kor_ttl_py2: 5252,
+    os: 2000,
+    stor_qty_kor: 9540,
+    stock_qty_kor: 132542,
+    search_qty_cy: 7426,
+    search_qty_py: 9718,
+  },
+  {
+    end_dt: '22.01.23',
+    sale_qty_kor_ttl: 9191,
+    sale_qty_kor_ttl_py: 9534,
+    sale_qty_kor_ttl_py2: 2871,
+    os: 0,
+    stor_qty_kor: 16426,
+    stock_qty_kor: 141205,
+    search_qty_cy: 7300,
+    search_qty_py: 10317,
+  },
+  {
+    end_dt: '22.01.30',
+    sale_qty_kor_ttl: 6342,
+    sale_qty_kor_ttl_py: 11535,
+    sale_qty_kor_ttl_py2: 3242,
+    os: 100,
+    stor_qty_kor: 16960,
+    stock_qty_kor: 152254,
+    search_qty_cy: 6640,
+    search_qty_py: 10521,
+  },
+  {
+    end_dt: '22.02.06',
+    sale_qty_kor_ttl: 7257,
+    sale_qty_kor_ttl_py: 11616,
+    sale_qty_kor_ttl_py2: 2934,
+    os: 0,
+    stor_qty_kor: 8380,
+    stock_qty_kor: 152673,
+    search_qty_cy: 8091,
+    search_qty_py: 11705,
   },
 ];
 
@@ -78,21 +129,21 @@ export default function SalesInventoryChart() {
           }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis dataKey="name" interval={0} fontSize={12} />
+          <XAxis dataKey="end_dt" interval={0} fontSize={12} />
           <YAxis />
           <YAxis yAxisId="right" orientation="right" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="pv" barSize={20} fill="pink" />
+          <Bar dataKey="search_qty_cy" barSize={20} fill="pink" />
           <Bar
-            dataKey="lastYearSearch"
+            dataKey="search_qty_py"
             yAxisId="right"
             barSize={20}
             fill="skyblue"
           />
-          <Line type="monotone" dataKey="a" stroke="hotpink" />
-          <Line type="monotone" dataKey="b" stroke="grey" />
-          <Line type="monotone" dataKey="c" stroke="green" />
+          <Line type="monotone" dataKey="sale_qty_kor_ttl" stroke="hotpink" />
+          <Line type="monotone" dataKey="sale_qty_kor_ttl_py" stroke="grey" />
+          <Line type="monotone" dataKey="sale_qty_kor_ttl_py2" stroke="green" />
         </ComposedChart>
       </ResponsiveContainer>
     </ChartWrapper>

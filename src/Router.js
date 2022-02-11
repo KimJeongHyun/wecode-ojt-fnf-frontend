@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import WithNav from './components/NavOutlet/WithNav';
 import WithoutNav from './components/NavOutlet/WithoutNav';
 import LandingPage from './pages/LandingPage/LandingPage';
+import SalesInventory from './pages/Main/Contents/Category/SalesInventoryStatus/SalesInventory';
 import Main from './pages/Main/Main';
 
 const MAIN_CONTENTS_PATH = ['/category', '/styleranking'];
@@ -11,6 +12,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/a" element={<SalesInventory />} />
         <Route element={<WithoutNav />}>
           <Route path="/" element={<LandingPage />} />
         </Route>
