@@ -10,7 +10,7 @@ import SelectButton from '../Buttons/SelectButton';
 
 import { useRecoilState } from 'recoil';
 import { filterSelect } from '../../atom/filterSelect';
-import { staticData } from '../../atom/staticData';
+import { staticData, isDataLoaded } from '../../atom/staticData';
 
 import useMakeQuery from '../../components/Nav/HorizonNavContents/hook/useMakeQuery';
 import {
@@ -24,6 +24,7 @@ const HorizonNav = () => {
   const [filterOptions, setFilterOptions] = useState({});
   const [selectedFilterOptions] = useRecoilState(filterSelect);
   const [statData, setStatData] = useRecoilState(staticData);
+  const [, setDataLoaded] = useRecoilState(isDataLoaded);
   const { queryString } = useMakeQuery();
 
   const showFilter = () => {
@@ -36,11 +37,14 @@ const HorizonNav = () => {
     });
   }, []);
 
-  const getStatistics = () => {
+  async function getStatistics() {
     const prevStat = { ...statData };
-
-    API.map((url, idx) => {
-      axios
+    // eslint-disable-next-line no-unused-vars
+    const messageObject = await API.reduce(async (promise, url, idx) => {
+      // 누산값 받아오기 (2)
+      let result = await promise;
+      // 누산값 변경 (3)
+      result = await axios
         .get(`http://${url}?brand=M&adult-kids=성인&${queryString}`)
         .then(res => {
           setStatData(prev => {
@@ -49,9 +53,12 @@ const HorizonNav = () => {
           });
         })
         .catch(err => alert(err));
+      // 다음 Promise 리턴
+      return result;
+    }, {}).then(() => {
+      setDataLoaded(true);
     });
-    return null;
-  };
+  }
 
   return (
     <NavContainer>
