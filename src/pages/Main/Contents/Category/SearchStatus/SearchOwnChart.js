@@ -10,6 +10,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+
+const PERIOD = [
+  { name: '당해', stroke: '#00b374' },
+  { name: '전년', stroke: '#ffd688' },
+];
+
 const data = [
   {
     end_dt: '21.02.07',
@@ -341,20 +347,16 @@ export default function SearchOwnChart() {
             />
             <Tooltip />
             <Legend />
-            <Line
-              dataKey="당해"
-              dot={false}
-              type="monotone"
-              stroke="#00b374"
-              strokeWidth={2}
-            />
-            <Line
-              dataKey="전년"
-              dot={false}
-              type="monotone"
-              stroke="#ffd688"
-              strokeWidth={2}
-            />
+            {PERIOD.map(item => (
+              <Line
+                key=""
+                dataKey={item.name}
+                stroke={item.stroke}
+                dot={false}
+                type="monotone"
+                strokeWidth={2}
+              />
+            ))}
           </LineChart>
         </ResponsiveContainer>
       )}

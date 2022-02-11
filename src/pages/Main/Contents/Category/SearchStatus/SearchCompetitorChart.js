@@ -12,6 +12,14 @@ import {
   ComposedChart,
 } from 'recharts';
 
+const BRAND_NAME = [
+  { name: '구찌', stroke: '#6391f4' },
+  { name: '나이키', stroke: '#384e75' },
+  { name: '루이비통', stroke: '#40d9d4' },
+  { name: '버버리', stroke: '#00b374' },
+  { name: '프라다', stroke: '#ffd688' },
+];
+
 export default function SearchCompetitorChart() {
   const data = [
     {
@@ -135,12 +143,6 @@ export default function SearchCompetitorChart() {
             tickLine={{ stroke: 'none' }}
             dy={12}
           />
-          <defs>
-            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#DB4644" stopOpacity={0.4} />
-              <stop offset="95%" stopColor="#DB4644" stopOpacity={0} />
-            </linearGradient>
-          </defs>
           <Legend
             verticalAlign="top"
             iconSize={0}
@@ -153,6 +155,12 @@ export default function SearchCompetitorChart() {
             }}
           />
           <Tooltip content={<CustomTooltip />} />
+          <defs>
+            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#DB4644" stopOpacity={0.4} />
+              <stop offset="95%" stopColor="#DB4644" stopOpacity={0} />
+            </linearGradient>
+          </defs>
           <Area
             type="monotone"
             dataKey="MLB"
@@ -161,41 +169,16 @@ export default function SearchCompetitorChart() {
             fillOpacity={1}
             fill="url(#color)"
           />
-          <Line
-            dot={false}
-            type="monotone"
-            dataKey="구찌"
-            stroke="#6391f4"
-            strokeWidth={2}
-          />
-          <Line
-            dot={false}
-            type="monotone"
-            dataKey="나이키"
-            stroke="#384e75"
-            strokeWidth={2}
-          />
-          <Line
-            dot={false}
-            type="monotone"
-            dataKey="루이비통"
-            stroke="#40d9d4"
-            strokeWidth={2}
-          />
-          <Line
-            dot={false}
-            type="monotone"
-            dataKey="버버리"
-            stroke="#00b374"
-            strokeWidth={2}
-          />
-          <Line
-            dot={false}
-            type="monotone"
-            dataKey="프라다"
-            stroke="#ffd688"
-            strokeWidth={2}
-          />
+          {BRAND_NAME.map(item => (
+            <Line
+              key=""
+              dataKey={item.name}
+              stroke={item.stroke}
+              dot={false}
+              type="monotone"
+              strokeWidth={2}
+            />
+          ))}
         </ComposedChart>
       </ResponsiveContainer>
     </ChartWrapper>
