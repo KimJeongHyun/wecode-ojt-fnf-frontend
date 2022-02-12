@@ -69,8 +69,11 @@ const NavToggleButton = styled.div`
   width: 100%;
   padding: 10px 0;
   cursor: pointer;
+
+  transition: font-size 0.2s ease;
+
   &:hover {
-    background: #adadad;
+    font-size: 1.3em;
   }
 
   svg {

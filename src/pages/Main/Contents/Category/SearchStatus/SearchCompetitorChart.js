@@ -186,7 +186,7 @@ export default function SearchCompetitorChart() {
 }
 
 const ChartWrapper = styled.div`
-  width: 61.2vw;
+  width: 54.5vw;
   height: 100%;
   padding: 20px;
 `;

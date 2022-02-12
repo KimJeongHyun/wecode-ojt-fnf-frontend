@@ -1,8 +1,7 @@
 import { useContext } from 'react';
-import useVerticalNavClick from './hook/useVerticalNavClick';
 
-import { isSideNavActive } from '../../../atom/sideNav';
-import { useRecoilValue } from 'recoil';
+import { selectedSideMenu, isSideNavActive } from '../../../atom/sideNav';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import styled, { ThemeContext } from 'styled-components';
 
@@ -27,7 +26,14 @@ const categoryBtnTypeIcon = {
 
 export default function VerticalCategoryNav() {
   const themeContext = useContext(ThemeContext);
-  const { isBtnClicked, handleBtnClick } = useVerticalNavClick();
+  const [isSelectedSideMenu, setSelectedSideMenu] =
+    useRecoilState(selectedSideMenu);
+
+  const handleBtnClick = e => {
+    const name = e.target.getAttribute('name');
+
+    setSelectedSideMenu(name);
+  };
   const isNavActive = useRecoilValue(isSideNavActive);
 
   return (
@@ -40,7 +46,7 @@ export default function VerticalCategoryNav() {
             monoColors={themeContext.monoColors}
             pointColors={themeContext.pointColors}
             isNavActive={isNavActive}
-            isBtnClicked={isBtnClicked[item[1]]}
+            isSelectedSideMenu={isSelectedSideMenu}
             onClick={handleBtnClick}
           >
             <NavButtonText>
@@ -71,12 +77,14 @@ const NavButton = styled.div`
   ${props =>
     props.isNavActive ? `padding-left:15%` : `justify-content:center`};
   display: flex;
-  align-items: center;\
+  align-items: center;
   height: 8%;
-  font-size: ${props => (props.isBtnClicked ? '0.95em' : '0.8em')};
+  font-size: ${props =>
+    props.isSelectedSideMenu === props.name ? '0.95em' : '0.8em'};
   font-weight: 700;
   border-radius: 5px;
-  color: ${props => (props.isBtnClicked ? '#fff' : '#b0c8e8')};
+  color: ${props =>
+    props.isSelectedSideMenu === props.name ? '#fff' : '#b0c8e8'};
 
   &:hover {
     color: white;

@@ -363,7 +363,7 @@ export default function SearchOwnChart() {
 }
 
 const ChartWrapper = styled.div`
-  width: 29.2vw;
+  width: 26vw;
   height: 100%;
   padding: 20px;
 `;

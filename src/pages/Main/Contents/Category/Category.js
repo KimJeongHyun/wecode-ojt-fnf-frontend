@@ -33,7 +33,7 @@ const CategoryWrapper = styled.section`
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 0 10px;
+  padding: 0 1vw;
   opacity: ${props => (props.toggleContents ? 0 : 1)};
   transition: ${props => (props.toggleContents ? '' : 'opacity 0.1s ease')};
 `;
