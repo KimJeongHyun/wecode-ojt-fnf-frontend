@@ -9,31 +9,37 @@ import styled from 'styled-components';
 export default function SalesInventory() {
   return (
     <InventoryWrapper>
-      <InventoryEach>
+      <LeftWrapper>
         <ContentCard children={<SalesInventoryChart />} />
-      </InventoryEach>
-      <InventoryEach>
         <ContentCard children={<SalesInventoryTable />} />
-      </InventoryEach>
-      <InventoryEach>
+      </LeftWrapper>
+      <RightWrapper>
         <ContentCard children={<SalesPerformanceTable />} />
-      </InventoryEach>
-
-      <InventoryEach>
         <ContentCard children={<SalesPerformanceSeasonTable />} />
-      </InventoryEach>
+      </RightWrapper>
     </InventoryWrapper>
   );
 }
 
 const InventoryWrapper = styled.section`
-  width: 100%;
+  width: 90vw;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  gap: 2vw;
 `;
 
-const InventoryEach = styled.div`
-  height: 24%;
+const LeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 46%;
+  gap: 2vh;
+`;
+
+const RightWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 52%;
+  height: 46%;
+  gap: 2vh;
 `;

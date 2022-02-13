@@ -1,0 +1,195 @@
+{
+  "weeklySubcategoryTimeseries": null,
+  "weeklySubcategoryTable": null,
+  "weeklyDomainTimeseries": null,
+  "weeklyDomainTable": null,
+  "weeklyStyleTable": null,
+  "weeklyChannelTimeseries": null,
+  "weeklyChannelTable": null,
+  "weeklyDistributionTimeseries": null,
+  "weeklyDistributionTable": null,
+  "searchCountTableWeekly": null,
+  "searchCountTablePeriod": null,
+  "searchCountTimeseriesOverall": null,
+  "searchCountTimeseriesCompetitors": null,
+  "salesSummaryAcc": {
+    "message": "success",
+    "data": [
+      {
+        "term_cls": "당해",
+        "int_stock_qty": 47164,
+        "stor_qty_kor_term": 0,
+        "sale_qty_w": 2030,
+        "avg_4wk_sale_qty": 1811,
+        "stock_kor": 45091,
+        "woi_4wks": 25
+      },
+      {
+        "term_cls": "전년",
+        "int_stock_qty": 32956,
+        "stor_qty_kor_term": 1320,
+        "sale_qty_w": 1097,
+        "avg_4wk_sale_qty": 458,
+        "stock_kor": 32878,
+        "woi_4wks": 72
+      }
+    ]
+  },
+  "salesSummaryAccSesn": {
+    "message": "success",
+    "data": [
+      {
+        "term_cls": "당해",
+        "indc_qty": 59900,
+        "ac_stor_qty_kor": 53197,
+        "sale_qty_kor": 2030,
+        "ac_sale_qty_kor": 8515,
+        "stock_qty": 45091,
+        "sales_rate": 16,
+        "ac_stor_qty_kor_season_end": 0,
+        "ac_sale_qty_kor_season_end": 0,
+        "stock_qty_season_end": 0,
+        "season_end_sales_rate": 0
+      },
+      {
+        "term_cls": "전년",
+        "indc_qty": 41100,
+        "ac_stor_qty_kor": 32880,
+        "sale_qty_kor": 1097,
+        "ac_sale_qty_kor": 1980,
+        "stock_qty": 32878,
+        "sales_rate": 6,
+        "ac_stor_qty_kor_season_end": 46853,
+        "ac_sale_qty_kor_season_end": 29552,
+        "stock_qty_season_end": 14847,
+        "season_end_sales_rate": 63
+      }
+    ]
+  },
+  "salesWeeklySummary": {
+    "message": "success",
+    "data": [
+      {
+        "end_dt": "21.11.28",
+        "sale_qty_kor_ttl": 0,
+        "sale_qty_kor_ttl_py": 0,
+        "sale_qty_kor_ttl_py2": 0,
+        "os": 0,
+        "stor_qty_kor": 0,
+        "stock_qty_kor": 0,
+        "search_qty_cy": 2233,
+        "search_qty_py": 1597
+      },
+      {
+        "end_dt": "21.12.05",
+        "sale_qty_kor_ttl": 0,
+        "sale_qty_kor_ttl_py": 0,
+        "sale_qty_kor_ttl_py2": 0,
+        "os": 0,
+        "stor_qty_kor": 0,
+        "stock_qty_kor": 0,
+        "search_qty_cy": 1863,
+        "search_qty_py": 1482
+      },
+      {
+        "end_dt": "21.12.12",
+        "sale_qty_kor_ttl": 0,
+        "sale_qty_kor_ttl_py": 0,
+        "sale_qty_kor_ttl_py2": 0,
+        "os": 8200,
+        "stor_qty_kor": 0,
+        "stock_qty_kor": 0,
+        "search_qty_cy": 2146,
+        "search_qty_py": 1472
+      },
+      {
+        "end_dt": "21.12.19",
+        "sale_qty_kor_ttl": 0,
+        "sale_qty_kor_ttl_py": 0,
+        "sale_qty_kor_ttl_py2": 0,
+        "os": 16100,
+        "stor_qty_kor": 12524,
+        "stock_qty_kor": 12921,
+        "search_qty_cy": 1676,
+        "search_qty_py": 1360
+      },
+      {
+        "end_dt": "21.12.26",
+        "sale_qty_kor_ttl": 2,
+        "sale_qty_kor_ttl_py": 0,
+        "sale_qty_kor_ttl_py2": 12,
+        "os": 10500,
+        "stor_qty_kor": 21642,
+        "stock_qty_kor": 36078,
+        "search_qty_cy": 1416,
+        "search_qty_py": 1082
+      },
+      {
+        "end_dt": "22.01.02",
+        "sale_qty_kor_ttl": 191,
+        "sale_qty_kor_ttl_py": 53,
+        "sale_qty_kor_ttl_py2": 76,
+        "os": 9600,
+        "stor_qty_kor": 14333,
+        "stock_qty_kor": 50663,
+        "search_qty_cy": 1464,
+        "search_qty_py": 1115
+      },
+      {
+        "end_dt": "22.01.09",
+        "sale_qty_kor_ttl": 1076,
+        "sale_qty_kor_ttl_py": 92,
+        "sale_qty_kor_ttl_py2": 226,
+        "os": 2000,
+        "stor_qty_kor": 0,
+        "stock_qty_kor": 49465,
+        "search_qty_cy": 1688,
+        "search_qty_py": 1067
+      },
+      {
+        "end_dt": "22.01.16",
+        "sale_qty_kor_ttl": 1255,
+        "sale_qty_kor_ttl_py": 103,
+        "sale_qty_kor_ttl_py2": 293,
+        "os": 2000,
+        "stor_qty_kor": 2124,
+        "stock_qty_kor": 48356,
+        "search_qty_cy": 1907,
+        "search_qty_py": 1234
+      },
+      {
+        "end_dt": "22.01.23",
+        "sale_qty_kor_ttl": 1703,
+        "sale_qty_kor_ttl_py": 137,
+        "sale_qty_kor_ttl_py2": 312,
+        "os": 2000,
+        "stor_qty_kor": -1315,
+        "stock_qty_kor": 45336,
+        "search_qty_cy": 2221,
+        "search_qty_py": 1464
+      },
+      {
+        "end_dt": "22.01.30",
+        "sale_qty_kor_ttl": 2258,
+        "sale_qty_kor_ttl_py": 498,
+        "sale_qty_kor_ttl_py2": 475,
+        "os": 2500,
+        "stor_qty_kor": 3889,
+        "stock_qty_kor": 47164,
+        "search_qty_cy": 2592,
+        "search_qty_py": 1939
+      },
+      {
+        "end_dt": "22.02.06",
+        "sale_qty_kor_ttl": 2030,
+        "sale_qty_kor_ttl_py": 1097,
+        "sale_qty_kor_ttl_py2": 559,
+        "os": 0,
+        "stor_qty_kor": 0,
+        "stock_qty_kor": 45091,
+        "search_qty_cy": 3380,
+        "search_qty_py": 2514
+      }
+    ]
+  }
+}

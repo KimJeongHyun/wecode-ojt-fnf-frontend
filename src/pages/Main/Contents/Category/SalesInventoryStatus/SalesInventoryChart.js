@@ -115,7 +115,8 @@ const data = [
   },
 ];
 
-export default function SalesInventoryChart() {
+export default function SalesInventoryChart({ chartData }) {
+  // console.log(chartData);
   return (
     <ChartWrapper>
       <ResponsiveContainer width="100%" height="100%">
@@ -134,16 +135,20 @@ export default function SalesInventoryChart() {
           <YAxis yAxisId="right" orientation="right" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="search_qty_cy" barSize={20} fill="pink" />
+          <Bar dataKey="search_qty_cy" barSize={20} fill="#EBCAC7" />
           <Bar
             dataKey="search_qty_py"
             yAxisId="right"
             barSize={20}
-            fill="skyblue"
+            fill="#CADBE5"
           />
-          <Line type="monotone" dataKey="sale_qty_kor_ttl" stroke="hotpink" />
-          <Line type="monotone" dataKey="sale_qty_kor_ttl_py" stroke="grey" />
-          <Line type="monotone" dataKey="sale_qty_kor_ttl_py2" stroke="green" />
+          <Line type="monotone" dataKey="sale_qty_kor_ttl" stroke="#E1C1E5" />
+          <Line
+            type="monotone"
+            dataKey="sale_qty_kor_ttl_py"
+            stroke="#CCEEFF"
+          />
+          <Line type="monotone" dataKey="sale_qty_kor_ttl_py2" stroke="grey" />
         </ComposedChart>
       </ResponsiveContainer>
     </ChartWrapper>
@@ -151,5 +156,6 @@ export default function SalesInventoryChart() {
 }
 
 const ChartWrapper = styled.section`
-  height: 25vh;
+  width: 36vw;
+  height: 46vh;
 `;

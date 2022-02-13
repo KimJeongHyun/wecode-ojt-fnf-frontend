@@ -27,6 +27,8 @@ const HorizonNav = () => {
   const [, setDataLoaded] = useRecoilState(isDataLoaded);
   const { queryString } = useMakeQuery();
 
+  console.log(statData);
+
   const showFilter = () => {
     clickBoolean(setShowFilterOptions);
   };
@@ -52,11 +54,7 @@ const HorizonNav = () => {
             return { ...prevStat };
           });
         })
-        .catch(err => alert(err));
-      // 다음 Promise 리턴
-      return result;
-    }, {}).then(() => {
-      setDataLoaded(true);
+        .catch(err => console.log(err));
     });
   }
 

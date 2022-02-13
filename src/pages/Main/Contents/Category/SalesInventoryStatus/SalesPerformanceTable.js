@@ -77,5 +77,6 @@ export default function UserTable() {
 }
 
 const TableWrapper = styled.section`
+  height: 46vh;
   text-align: center;
 `;
