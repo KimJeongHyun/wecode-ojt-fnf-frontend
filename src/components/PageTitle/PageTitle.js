@@ -5,6 +5,9 @@ export default function PageTitle({ title }) {
 }
 
 const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 5.2vh;
-  font-size: 36px;
+  font-size: 24px;
 `;

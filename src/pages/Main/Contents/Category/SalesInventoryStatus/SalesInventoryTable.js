@@ -133,7 +133,7 @@ export default function UserTable() {
         </TableHead>
         <TableBody>
           {data.map(item => (
-            <TableRow key={item.end_dt}>
+            <TableRow key={item.end_dt + 'inventory'}>
               <TableCell align="center">{item.end_dt}</TableCell>
               <TableCell align="center">{item.sale_qty_kor_ttl}</TableCell>
               <TableCell align="center">{item.sale_qty_kor_ttl_py}</TableCell>
@@ -152,10 +152,7 @@ export default function UserTable() {
 }
 
 const TableWrapper = styled.section`
-  /* @media only screen and (max-width: 1600px) {
-    height: 25vh;
-  } */
-  height: 46vh;
+  height: 100%;
   text-align: center;
   overflow-y: auto;
   word-break: keep-all;

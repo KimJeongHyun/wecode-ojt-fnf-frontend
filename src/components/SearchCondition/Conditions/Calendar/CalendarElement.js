@@ -17,11 +17,19 @@ const CalendarElement = ({ value }) => {
     useRecoilState(filterSelect);
 
   useEffect(() => {
-    const prevState = { ...selectedFilterOptions };
-    setSelectedFilterOptions(() => {
-      prevState[value] = dateConverter(startDate);
-      return prevState;
-    });
+    if (value === 'start-date') {
+      const startDay = new Date();
+      const previousDay = startDay.getDate() - 56;
+      startDay.setDate(previousDay);
+
+      const prevState = { ...selectedFilterOptions };
+      setSelectedFilterOptions(() => {
+        prevState[value] = dateConverter(startDay);
+        return prevState;
+      });
+      setStartDate(startDay);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const changeDate = dateObj => {

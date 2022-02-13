@@ -10,7 +10,11 @@ import SelectButton from '../Buttons/SelectButton';
 
 import { useRecoilState } from 'recoil';
 import { filterSelect } from '../../atom/filterSelect';
-import { staticData, isDataLoaded } from '../../atom/staticData';
+import {
+  staticData,
+  isDataLoaded,
+  dataLoadedCount,
+} from '../../atom/staticData';
 
 import useMakeQuery from '../../components/Nav/HorizonNavContents/hook/useMakeQuery';
 import {
@@ -25,9 +29,8 @@ const HorizonNav = () => {
   const [selectedFilterOptions] = useRecoilState(filterSelect);
   const [statData, setStatData] = useRecoilState(staticData);
   const [, setDataLoaded] = useRecoilState(isDataLoaded);
+  const [, setDataLoadedCount] = useRecoilState(dataLoadedCount);
   const { queryString } = useMakeQuery();
-
-  console.log(statData);
 
   const showFilter = () => {
     clickBoolean(setShowFilterOptions);
@@ -41,6 +44,10 @@ const HorizonNav = () => {
 
   async function getStatistics() {
     const prevStat = { ...statData };
+
+    setDataLoaded(false);
+    setDataLoadedCount(0);
+
     // eslint-disable-next-line no-unused-vars
     const messageObject = await API.reduce(async (promise, url, idx) => {
       // 누산값 받아오기 (2)
@@ -53,8 +60,16 @@ const HorizonNav = () => {
             prevStat[DATANAME[idx]] = res.data;
             return { ...prevStat };
           });
+          setDataLoadedCount(current => {
+            return current + 1;
+          });
         })
-        .catch(err => console.log(err));
+        .catch(err => alert(err));
+      // 다음 Promise 리턴
+      return result;
+    }, {}).then(() => {
+      setDataLoaded(true);
+      setDataLoadedCount(0);
     });
   }
 
@@ -143,7 +158,7 @@ const ShrinkFilter = styled.div`
     transform-origin: right;
     transform: ${props =>
       props.showFilterOptions ? 'scaleX(0)' : 'scaleX(1)'};
-    z-index: 2;
+    z-index: 5;
   }
 `;
 

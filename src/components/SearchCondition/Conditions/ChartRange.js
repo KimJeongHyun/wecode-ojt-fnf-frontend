@@ -22,6 +22,7 @@ const ChartRangeContainer = styled.div`
 
 const CalendarBlock = styled.div`
   width: 100px;
+  z-index: 4;
 `;
 
 const CalCoupler = styled.span`

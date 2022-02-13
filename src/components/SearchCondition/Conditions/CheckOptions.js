@@ -4,6 +4,7 @@ import { DropdownIcon } from '../../../styles/icons';
 import CheckElement from './CheckElement/CheckElement';
 import { useRecoilState } from 'recoil';
 import { filterSelect } from '../../../atom/filterSelect';
+import { dataLoadedCount } from '../../../atom/staticData';
 
 const VALUE_OBJ_KOR = {
   categories: '카테고리',
@@ -16,6 +17,7 @@ const CheckOptions = ({ filterOptions, value }) => {
     useRecoilState(filterSelect);
   const [expand, setExpand] = useState(false);
   const [allChecked, setAllChecked] = useState(false);
+  const [atomDataLoadedCount] = useRecoilState(dataLoadedCount);
 
   const VALUE_OBJ = {
     categories: selectedFilterOptions.categories,
@@ -29,6 +31,10 @@ const CheckOptions = ({ filterOptions, value }) => {
       return acc + cur + ',';
     }, ''),
   };
+
+  useEffect(() => {
+    atomDataLoadedCount === 0 && setExpand(false);
+  }, [atomDataLoadedCount]);
 
   useEffect(() => {
     if (value !== 'categories') {
@@ -73,7 +79,7 @@ const CheckOptions = ({ filterOptions, value }) => {
         </span>
         <DropDownImg expand={expand} />
       </SelectField>
-      <OptionList expand={expand}>
+      <OptionList expand={expand} dataLoadedCount={atomDataLoadedCount}>
         {value !== 'categories' &&
           (filterOptions ? (
             <Section>
@@ -115,8 +121,9 @@ const Section = styled.section``;
 
 const MultiSelector = styled.div`
   position: relative;
-  width: ${props => (props.value === 'subcategories' ? '120px' : '100px')};
+  width: ${props => (props.value === 'seasons' ? '90px' : '120px')};
   height: 27px;
+  z-index: 4;
 `;
 
 const SelectField = styled.div`
@@ -146,7 +153,8 @@ const OptionList = styled.div`
   box-shadow: 0 10px 60px rgb(0, 0, 0, 0.1);
   border: 1px solid rgb(156, 156, 156);
   border-radius: 4px;
-  display: ${props => (props.expand ? 'block' : 'none')};
+  display: ${props =>
+    props.expand && props.dataLoadedCount < 1 ? 'block' : 'none'};
   background-color: white;
 `;
 

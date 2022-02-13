@@ -15,6 +15,7 @@ export const staticData = atom({
     searchCountTableWeekly: null,
     searchCountTablePeriod: null,
     searchCountTimeseriesOverall: null,
+    searchCountTimeseriesBrand: null,
     searchCountTimeseriesCompetitors: null,
     salesSummaryAcc: null,
     salesSummaryAccSesn: null,
@@ -25,4 +26,9 @@ export const staticData = atom({
 export const isDataLoaded = atom({
   key: 'isDataLoaded',
   default: false,
+});
+
+export const dataLoadedCount = atom({
+  key: 'dataLoadedCount',
+  default: 0,
 });

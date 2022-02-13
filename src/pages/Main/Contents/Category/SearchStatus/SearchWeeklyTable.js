@@ -6,14 +6,7 @@ import { CgMenuRight } from 'react-icons/cg';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { dataStringFormatter } from '../../../../../utils/Functions';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Paper,
-} from '@material-ui/core';
+import { Table, TableBody, TableCell, TableRow } from '@material-ui/core';
 
 const SearchCountTable = [
   {
@@ -133,13 +126,13 @@ export default function SearchWeeklyTable() {
                     <StyledTableCell component="th" scope="row">
                       {competitor}
                     </StyledTableCell>
-                    <StyledTableCell align="right">{growth}%</StyledTableCell>
                     <StyledTableCell align="right">
                       {convertedCy}
                     </StyledTableCell>
                     <StyledTableCell align="right">
                       {convertedPy}
                     </StyledTableCell>
+                    <StyledTableCell align="right">{growth}%</StyledTableCell>
                   </StyledTableRow>
                 );
               }

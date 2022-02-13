@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { CgMenuRight } from 'react-icons/cg';
 
 import {
-  LineChart,
-  Line,
   Area,
   XAxis,
   YAxis,
@@ -313,7 +311,9 @@ export default function SearchOwnChart() {
         <CustomTooltips>
           <Label>{`${label} / MLB : ${payload[1].value}`}</Label>
           {payload.map(item => (
-            <DataKeys key="end_dt">{`${item.dataKey} : ${item.value}`}</DataKeys>
+            <DataKeys
+              key={item.dataKey}
+            >{`${item.dataKey} : ${item.value}`}</DataKeys>
           ))}
         </CustomTooltips>
       );

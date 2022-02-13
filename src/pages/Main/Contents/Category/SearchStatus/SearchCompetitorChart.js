@@ -113,7 +113,9 @@ export default function SearchCompetitorChart() {
         <CustomTooltips>
           <Label>{`${label} / MLB : ${payload[0].value}`}</Label>
           {payload.map(item => (
-            <DataKeys key="end_dt">{`${item.dataKey} : ${item.value}`}</DataKeys>
+            <DataKeys
+              key={item.dataKey}
+            >{`${item.dataKey} : ${item.value}`}</DataKeys>
           ))}
         </CustomTooltips>
       );
@@ -162,7 +164,7 @@ export default function SearchCompetitorChart() {
           <Tooltip content={<CustomTooltip />} />
           {BRAND_NAME.map(item => (
             <Line
-              key=""
+              key={item.name}
               dataKey={item.name}
               stroke={item.stroke}
               dot={false}
