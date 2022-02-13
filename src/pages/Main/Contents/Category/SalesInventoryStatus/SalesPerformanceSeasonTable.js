@@ -44,7 +44,8 @@ export default function UserTable() {
 
   return (
     <TableWrapper component={Paper}>
-      <Table size="small">
+      판매 실적 요약 (시즌누계) <br />
+      <Table size="medium">
         <TableHead>
           <TableRow>
             <TableCell align="center" />
@@ -77,7 +78,7 @@ export default function UserTable() {
         </TableHead>
         <TableBody>
           {data.map(item => (
-            <TableRow key={item.end_dt}>
+            <TableRow key={item.term_cls}>
               <TableCell align="center">{item.term_cls}</TableCell>
               <TableCell align="center">{item.indc_qty}</TableCell>
               <TableCell align="center">{item.ac_stor_qty_kor}</TableCell>
@@ -105,4 +106,6 @@ const TableWrapper = styled.section`
   height: 46vh;
   text-align: center;
   overflow-y: auto;
+  word-break: keep-all;
+  font-size: 20px;
 `;

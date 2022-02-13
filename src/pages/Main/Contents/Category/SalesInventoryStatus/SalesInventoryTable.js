@@ -158,4 +158,5 @@ const TableWrapper = styled.section`
   height: 46vh;
   text-align: center;
   overflow-y: auto;
+  word-break: keep-all;
 `;

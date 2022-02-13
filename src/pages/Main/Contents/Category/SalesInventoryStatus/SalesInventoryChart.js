@@ -130,7 +130,7 @@ export default function SalesInventoryChart({ chartData }) {
           }}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis dataKey="end_dt" interval={0} fontSize={12} />
+          <XAxis dataKey="end_dt" interval={0} fontSize={10} />
           <YAxis />
           <YAxis yAxisId="right" orientation="right" />
           <Tooltip />
