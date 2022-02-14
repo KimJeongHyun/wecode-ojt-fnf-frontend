@@ -1,98 +1,818 @@
 {
-  "message": "success",
-  "categories": [
-    "가방",
-    "간절기아우터",
-    "기타용품",
-    "기타의류",
-    "데님",
-    "맨투맨",
-    "모자",
-    "스윔웨어",
-    "신발",
-    "원피스",
-    "트레이닝셋업",
-    "티셔츠",
-    "패딩",
-    "팬츠",
-    "후리스"
-  ],
-  "subcategories": {
-    "TBA": ["TBA"],
-    "간절기아우터": ["가디건", "기타아우터", "바람막이", "베이스볼점퍼"],
-    "패딩": ["경량패딩", "다운점퍼", "롱패딩", "숏패딩", "패딩베스트"],
-    "기타용품": [
-      "기타",
-      "마스크",
-      "악세서리",
-      "액세서리",
-      "양말",
-      "쥬얼리",
-      "타올",
-      "토시"
-    ],
-    "가방": [
-      "기타가방",
-      "백팩",
-      "버킷백",
-      "쇼퍼백",
-      "숄더백",
-      "크로스백",
-      "파우치",
-      "힙색"
-    ],
-    "모자": [
-      "기타모",
-      "메쉬캡",
-      "방한모",
-      "볼캡",
-      "비니",
-      "스냅백",
-      "썬캡",
-      "햇"
-    ],
-    "팬츠": [
-      "기타팬츠",
-      "레깅스",
-      "반바지",
-      "스커트",
-      "우븐팬츠",
-      "조거팬츠",
-      "카고팬츠",
-      "팬츠"
-    ],
-    "데님": ["데님베스트", "데님셔츠", "데님스커트", "데님자켓", "데님팬츠"],
-    "신발": [
-      "런닝화",
-      "뮬",
-      "샌들",
-      "스니커즈",
-      "슬리퍼",
-      "신발",
-      "어글리슈즈",
-      "운동화",
-      "쪼리",
-      "캔버스화"
-    ],
-    "맨투맨": ["맨투맨", "후드"],
-    "기타의류": ["셔츠"],
-    "스윔웨어": ["스윔웨어"],
-    "원피스": ["원피스"],
-    "트레이닝셋업": ["집업", "트레이닝팬츠"],
-    "티셔츠": ["티셔츠", "폴로티셔츠"],
-    "후리스": ["후리스"]
+  "weeklySubcategoryTimeseries": {
+    "message": "success",
+    "data": [
+      {
+        "end_date": "21.11.28",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.05",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.12",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.19",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 102,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.26",
+        "sales_kor_cy": 2,
+        "sales_kor_retail_cy": 2,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 253,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.02",
+        "sales_kor_cy": 191,
+        "sales_kor_retail_cy": 35,
+        "sales_dutyrfwhole_cy": 156,
+        "sales_chn_cy": 913,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.09",
+        "sales_kor_cy": 1076,
+        "sales_kor_retail_cy": 192,
+        "sales_dutyrfwhole_cy": 884,
+        "sales_chn_cy": 973,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.16",
+        "sales_kor_cy": 1255,
+        "sales_kor_retail_cy": 344,
+        "sales_dutyrfwhole_cy": 911,
+        "sales_chn_cy": 1827,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.23",
+        "sales_kor_cy": 1703,
+        "sales_kor_retail_cy": 513,
+        "sales_dutyrfwhole_cy": 1190,
+        "sales_chn_cy": 2965,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.30",
+        "sales_kor_cy": 2258,
+        "sales_kor_retail_cy": 600,
+        "sales_dutyrfwhole_cy": 1658,
+        "sales_chn_cy": 4893,
+        "sales_gvl_cy": 13
+      },
+      {
+        "end_date": "22.02.06",
+        "sales_kor_cy": 2030,
+        "sales_kor_retail_cy": 829,
+        "sales_dutyrfwhole_cy": 1201,
+        "sales_chn_cy": 3317,
+        "sales_gvl_cy": 15
+      },
+      {
+        "end_date": "22.02.13",
+        "sales_kor_cy": 730,
+        "sales_kor_retail_cy": 365,
+        "sales_dutyrfwhole_cy": 365,
+        "sales_chn_cy": 1015,
+        "sales_gvl_cy": 7
+      }
+    ]
   },
-  "seasons": [
-    "22S",
-    "22N",
-    "22F",
-    "21S",
-    "21N",
-    "21F",
-    "20S",
-    "20F",
-    "19S",
-    "19F",
-    "18S"
-  ]
+  "weeklySubcategoryTable": {
+    "message": "success",
+    "data": [
+      {
+        "sub_cat_nm": "Total",
+        "week_sale_qty_cy": 730,
+        "stock_qty": 44187,
+        "woi": 61,
+        "week_ratio": 100,
+        "week_growth": 81,
+        "sale_rate": 17
+      },
+      {
+        "sub_cat_nm": "기타아우터",
+        "week_sale_qty_cy": 238,
+        "stock_qty": 1480,
+        "woi": 6,
+        "week_ratio": 43,
+        "week_growth": 158,
+        "sale_rate": 64
+      },
+      {
+        "sub_cat_nm": "베이스볼점퍼",
+        "week_sale_qty_cy": 228,
+        "stock_qty": 11145,
+        "woi": 49,
+        "week_ratio": 31,
+        "week_growth": 120,
+        "sale_rate": 26
+      },
+      {
+        "sub_cat_nm": "바람막이",
+        "week_sale_qty_cy": 264,
+        "stock_qty": 31562,
+        "woi": 120,
+        "week_ratio": 26,
+        "week_growth": 37,
+        "sale_rate": 8
+      }
+    ]
+  },
+  "weeklyDomainTimeseries": {
+    "message": "success",
+    "data": [
+      {
+        "end_date": "21.11.28",
+        "ATHLEISURE": 0,
+        "BASIC": 0,
+        "HEART": 0,
+        "LIKE": 0,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "21.12.05",
+        "ATHLEISURE": 0,
+        "BASIC": 0,
+        "HEART": 0,
+        "LIKE": 0,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "21.12.12",
+        "ATHLEISURE": 0,
+        "BASIC": 0,
+        "HEART": 0,
+        "LIKE": 0,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "21.12.19",
+        "ATHLEISURE": 0,
+        "BASIC": 0,
+        "HEART": 0,
+        "LIKE": 0,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "21.12.26",
+        "ATHLEISURE": 0,
+        "BASIC": 0,
+        "HEART": 0,
+        "LIKE": 2,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "22.01.02",
+        "ATHLEISURE": 0,
+        "BASIC": 186,
+        "HEART": 0,
+        "LIKE": 5,
+        "MONOGRAM": 0,
+        "SEAMBALL": 0
+      },
+      {
+        "end_date": "22.01.09",
+        "ATHLEISURE": 0,
+        "BASIC": 829,
+        "HEART": 0,
+        "LIKE": 6,
+        "MONOGRAM": 211,
+        "SEAMBALL": 30
+      },
+      {
+        "end_date": "22.01.16",
+        "ATHLEISURE": 0,
+        "BASIC": 546,
+        "HEART": 7,
+        "LIKE": 3,
+        "MONOGRAM": 532,
+        "SEAMBALL": 167
+      },
+      {
+        "end_date": "22.01.23",
+        "ATHLEISURE": 0,
+        "BASIC": 1228,
+        "HEART": 21,
+        "LIKE": 7,
+        "MONOGRAM": 418,
+        "SEAMBALL": 29
+      },
+      {
+        "end_date": "22.01.30",
+        "ATHLEISURE": 5,
+        "BASIC": 1895,
+        "HEART": 31,
+        "LIKE": 15,
+        "MONOGRAM": 260,
+        "SEAMBALL": 52
+      },
+      {
+        "end_date": "22.02.06",
+        "ATHLEISURE": 8,
+        "BASIC": 1666,
+        "HEART": 40,
+        "LIKE": 6,
+        "MONOGRAM": 240,
+        "SEAMBALL": 70
+      },
+      {
+        "end_date": "22.02.13",
+        "ATHLEISURE": 7,
+        "BASIC": 567,
+        "HEART": 17,
+        "LIKE": 5,
+        "MONOGRAM": 107,
+        "SEAMBALL": 27
+      }
+    ]
+  },
+  "weeklyDomainTable": {
+    "message": "success",
+    "data": [
+      {
+        "domain1_nm": "Total",
+        "week_sale_qty_cy": 2030,
+        "stock_qty": 45091,
+        "woi": 22,
+        "week_ratio": 100,
+        "week_growth": 260,
+        "sale_rate": 16
+      },
+      {
+        "domain1_nm": "BASIC",
+        "week_sale_qty_cy": 1666,
+        "stock_qty": 20227,
+        "woi": 12,
+        "week_ratio": 85,
+        "week_growth": 319,
+        "sale_rate": 24
+      },
+      {
+        "domain1_nm": "MONOGRAM",
+        "week_sale_qty_cy": 240,
+        "stock_qty": 15451,
+        "woi": 64,
+        "week_ratio": 11,
+        "week_growth": 0,
+        "sale_rate": 10
+      },
+      {
+        "domain1_nm": "SEAMBALL",
+        "week_sale_qty_cy": 70,
+        "stock_qty": 5109,
+        "woi": 73,
+        "week_ratio": 3,
+        "week_growth": 21,
+        "sale_rate": 6
+      },
+      {
+        "domain1_nm": "HEART",
+        "week_sale_qty_cy": 40,
+        "stock_qty": 1292,
+        "woi": 32,
+        "week_ratio": 2,
+        "week_growth": 0,
+        "sale_rate": 7
+      },
+      {
+        "domain1_nm": "ATHLEISURE",
+        "week_sale_qty_cy": 8,
+        "stock_qty": 2018,
+        "woi": 252,
+        "week_ratio": 0,
+        "week_growth": 0,
+        "sale_rate": 1
+      },
+      {
+        "domain1_nm": "LIKE",
+        "week_sale_qty_cy": 6,
+        "stock_qty": 994,
+        "woi": 166,
+        "week_ratio": 0,
+        "week_growth": 0,
+        "sale_rate": 5
+      },
+      {
+        "domain1_nm": "COOLFIELD",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "week_ratio": 0,
+        "week_growth": 0,
+        "sale_rate": 0
+      },
+      {
+        "domain1_nm": "GRAFFITI",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "week_ratio": 0,
+        "week_growth": 0,
+        "sale_rate": 0
+      },
+      {
+        "domain1_nm": "PLAY",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "week_ratio": 0,
+        "week_growth": 0,
+        "sale_rate": 0
+      }
+    ]
+  },
+  "weeklyStyleTable": {
+    "message": "success",
+    "data": [
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220117/3AJKB0121-50BKS-58411266417270009.png",
+        "week_sale_qty_cy": 643,
+        "stock_qty": 1718,
+        "woi": 3,
+        "sale_rate": 58,
+        "week_ratio": 42,
+        "prdt_nm": "베이직 블레이저 울 자켓",
+        "style_cd": "3AJKB0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20211230/3AJPB0321-50BKS-56872818707980652.png",
+        "week_sale_qty_cy": 625,
+        "stock_qty": 5693,
+        "woi": 9,
+        "sale_rate": 31,
+        "week_ratio": 27,
+        "prdt_nm": "뉴핏 MLB 점퍼",
+        "style_cd": "3AJPB0321"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20211224/3AJPB0121-50BKS-56334492248860452.png",
+        "week_sale_qty_cy": 116,
+        "stock_qty": 562,
+        "woi": 5,
+        "sale_rate": 59,
+        "week_ratio": 6,
+        "prdt_nm": "베이직 야구점퍼",
+        "style_cd": "3AJPB0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220124/3AWJB0121-50BKS-59014582214539115.png",
+        "week_sale_qty_cy": 112,
+        "stock_qty": 6002,
+        "woi": 54,
+        "sale_rate": 3,
+        "week_ratio": 3,
+        "prdt_nm": "베이직 로고 바람막이",
+        "style_cd": "3AWJB0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220110/3AWJB0221-50BKS-57812473495692451.png",
+        "week_sale_qty_cy": 84,
+        "stock_qty": 2302,
+        "woi": 27,
+        "sale_rate": 10,
+        "week_ratio": 3,
+        "prdt_nm": "베이직 로고 아노락",
+        "style_cd": "3AWJB0221"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220110/3AWJM0121-50CRS-57812478540233229.png",
+        "week_sale_qty_cy": 80,
+        "stock_qty": 4724,
+        "woi": 59,
+        "sale_rate": 8,
+        "week_ratio": 3,
+        "prdt_nm": "모노그램 전판프린트 셋업 바람막이",
+        "style_cd": "3AWJM0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220110/3FWJB0121-50BKS-57812543981169314.png",
+        "week_sale_qty_cy": 62,
+        "stock_qty": 2214,
+        "woi": 36,
+        "sale_rate": 7,
+        "week_ratio": 2,
+        "prdt_nm": "여성 베이직 바람막이 셋업 셋업",
+        "style_cd": "3FWJB0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220105/3AWJM0221-50BGS-57365119517067882.png",
+        "week_sale_qty_cy": 58,
+        "stock_qty": 1560,
+        "woi": 27,
+        "sale_rate": 23,
+        "week_ratio": 2,
+        "prdt_nm": "다이아 모노그램 절개 셋업 바람막이",
+        "style_cd": "3AWJM0221"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220106/3AWJS0221-50BKS-57475639787988900.png",
+        "week_sale_qty_cy": 50,
+        "stock_qty": 3054,
+        "woi": 61,
+        "sale_rate": 3,
+        "week_ratio": 2,
+        "prdt_nm": "씸볼 셋업 바람막이",
+        "style_cd": "3AWJS0221"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220110/3AJPH0121-50BKS-57811937043241509.png",
+        "week_sale_qty_cy": 40,
+        "stock_qty": 1292,
+        "woi": 32,
+        "sale_rate": 7,
+        "week_ratio": 2,
+        "prdt_nm": "하트 베이스볼 점퍼",
+        "style_cd": "3AJPH0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220105/3FWJM0221-50BGS-57365121086491935.png",
+        "week_sale_qty_cy": 40,
+        "stock_qty": 1591,
+        "woi": 40,
+        "sale_rate": 18,
+        "week_ratio": 2,
+        "prdt_nm": "여성 크롭 다이아모노그램 자가드 바람막이",
+        "style_cd": "3FWJM0221"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220105/3LWJM0321-50BGS-57365126140435092.png",
+        "week_sale_qty_cy": 37,
+        "stock_qty": 1883,
+        "woi": 51,
+        "sale_rate": 12,
+        "week_ratio": 2,
+        "prdt_nm": "남성 다이아모노그램 자가드 바람막이",
+        "style_cd": "3LWJM0321"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220106/3AJPM0121-50BGS-57475635093751833.png",
+        "week_sale_qty_cy": 25,
+        "stock_qty": 2832,
+        "woi": 113,
+        "sale_rate": 5,
+        "week_ratio": 1,
+        "prdt_nm": "다이아 모노그램 MLB 점퍼",
+        "style_cd": "3AJPM0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220110/3FWJB0221-50BKS-57812547062353124.png",
+        "week_sale_qty_cy": 24,
+        "stock_qty": 1736,
+        "woi": 72,
+        "sale_rate": 3,
+        "week_ratio": 1,
+        "prdt_nm": "여성 베이직 아노락",
+        "style_cd": "3FWJB0221"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220105/3AWJS0321-50BKS-57378608959892412.png",
+        "week_sale_qty_cy": 20,
+        "stock_qty": 2055,
+        "woi": 103,
+        "sale_rate": 11,
+        "week_ratio": 1,
+        "prdt_nm": "마카씸볼 아노락",
+        "style_cd": "3AWJS0321"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220128/3AWJA0121-50BKS-59365290722411454.png",
+        "week_sale_qty_cy": 8,
+        "stock_qty": 2018,
+        "woi": 252,
+        "sale_rate": 1,
+        "week_ratio": 0,
+        "prdt_nm": "애슬레저 바람막이",
+        "style_cd": "3AWJA0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220106/3AJPL0121-07LDL-57451336453454522.png",
+        "week_sale_qty_cy": 6,
+        "stock_qty": 994,
+        "woi": 166,
+        "sale_rate": 5,
+        "week_ratio": 0,
+        "prdt_nm": "라이크 나일론 베이스볼 점퍼",
+        "style_cd": "3AJPL0121"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220207/3AWJB0521-50CRS-60222135447027369.png",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "sale_rate": 0,
+        "week_ratio": 0,
+        "prdt_nm": "베이직 썸머 파이핑 바람막이 (홑겹)",
+        "style_cd": "3AWJB0521"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220207/3AWJB0621-07BLS-60223400906406566.png",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "sale_rate": 0,
+        "week_ratio": 0,
+        "prdt_nm": "베이직 썸머 라글란 바람막이 (홑겹)",
+        "style_cd": "3AWJB0621"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220208/3FWJB0421-50NYL-60328983992660788.png",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "sale_rate": 0,
+        "week_ratio": 0,
+        "prdt_nm": "여성 크롭 컬러블럭 바람막이 (홑겹)",
+        "style_cd": "3FWJB0421"
+      },
+      {
+        "url": null,
+        "week_sale_qty_cy": 0,
+        "stock_qty": 0,
+        "woi": 0,
+        "sale_rate": 0,
+        "week_ratio": 0,
+        "prdt_nm": "씸볼 그라데이션 테잎 바람막이",
+        "style_cd": "3AWJS0421"
+      },
+      {
+        "url": "http://static.mlb-korea.com/images/goods/thnail/m/20220203/3FWJM0121-50BKS-59895595451103942.png",
+        "week_sale_qty_cy": 0,
+        "stock_qty": 2861,
+        "woi": 2861,
+        "sale_rate": 0,
+        "week_ratio": 0,
+        "prdt_nm": "여성 썸머 모노그램 바람막이 셋업",
+        "style_cd": "3FWJM0121"
+      }
+    ]
+  },
+  "weeklyChannelTimeseries": {
+    "message": "success",
+    "data": [
+      {
+        "end_date": "21.11.28",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.05",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.12",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 0,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.19",
+        "sales_kor_cy": 0,
+        "sales_kor_retail_cy": 0,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 102,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "21.12.26",
+        "sales_kor_cy": 2,
+        "sales_kor_retail_cy": 2,
+        "sales_dutyrfwhole_cy": 0,
+        "sales_chn_cy": 253,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.02",
+        "sales_kor_cy": 191,
+        "sales_kor_retail_cy": 35,
+        "sales_dutyrfwhole_cy": 156,
+        "sales_chn_cy": 913,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.09",
+        "sales_kor_cy": 1076,
+        "sales_kor_retail_cy": 192,
+        "sales_dutyrfwhole_cy": 884,
+        "sales_chn_cy": 973,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.16",
+        "sales_kor_cy": 1255,
+        "sales_kor_retail_cy": 344,
+        "sales_dutyrfwhole_cy": 911,
+        "sales_chn_cy": 1827,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.23",
+        "sales_kor_cy": 1703,
+        "sales_kor_retail_cy": 513,
+        "sales_dutyrfwhole_cy": 1190,
+        "sales_chn_cy": 2965,
+        "sales_gvl_cy": 0
+      },
+      {
+        "end_date": "22.01.30",
+        "sales_kor_cy": 2258,
+        "sales_kor_retail_cy": 600,
+        "sales_dutyrfwhole_cy": 1658,
+        "sales_chn_cy": 4893,
+        "sales_gvl_cy": 13
+      },
+      {
+        "end_date": "22.02.06",
+        "sales_kor_cy": 2030,
+        "sales_kor_retail_cy": 829,
+        "sales_dutyrfwhole_cy": 1201,
+        "sales_chn_cy": 3317,
+        "sales_gvl_cy": 15
+      }
+    ]
+  },
+  "weeklyChannelTable": {
+    "message": "success",
+    "data": [
+      {
+        "cls": "Total",
+        "ratio": 100,
+        "qty_cy": 2030,
+        "qty_py": 1097,
+        "growth": 185
+      },
+      {
+        "cls": "면세RF도매",
+        "ratio": 65,
+        "qty_cy": 1201,
+        "qty_py": 337,
+        "growth": 356
+      },
+      {
+        "cls": "국내",
+        "ratio": 35,
+        "qty_cy": 829,
+        "qty_py": 760,
+        "growth": 109
+      }
+    ]
+  },
+  "weeklyDistributionTimeseries": {
+    "message": "success",
+    "data": [
+      {
+        "end_date": "21.12.26",
+        "대리점": 2,
+        "면세점": 0,
+        "백화점": 0,
+        "온라인": 0,
+        "직영점": 0
+      },
+      {
+        "end_date": "22.01.02",
+        "대리점": 7,
+        "면세점": 155,
+        "백화점": 19,
+        "온라인": 2,
+        "직영점": 8
+      },
+      {
+        "end_date": "22.01.09",
+        "대리점": 69,
+        "면세점": 798,
+        "백화점": 116,
+        "온라인": 61,
+        "직영점": 32
+      },
+      {
+        "end_date": "22.01.16",
+        "대리점": 95,
+        "면세점": 789,
+        "백화점": 263,
+        "온라인": 54,
+        "직영점": 54
+      },
+      {
+        "end_date": "22.01.23",
+        "대리점": 130,
+        "면세점": 1005,
+        "백화점": 403,
+        "온라인": 82,
+        "직영점": 83
+      },
+      {
+        "end_date": "22.01.30",
+        "대리점": 199,
+        "면세점": 1223,
+        "백화점": 437,
+        "온라인": 300,
+        "직영점": 99
+      },
+      {
+        "end_date": "22.02.06",
+        "대리점": 302,
+        "면세점": 1139,
+        "백화점": 414,
+        "온라인": 56,
+        "직영점": 119
+      }
+    ]
+  },
+  "weeklyDistributionTable": {
+    "message": "success",
+    "data": [
+      {
+        "cls": "Total",
+        "ratio": 100,
+        "qty_cy": 2030,
+        "qty_py": 1097,
+        "growth": 185
+      },
+      {
+        "cls": "면세점",
+        "ratio": 62,
+        "qty_cy": 1139,
+        "qty_py": 239,
+        "growth": 477
+      },
+      {
+        "cls": "백화점",
+        "ratio": 18,
+        "qty_cy": 414,
+        "qty_py": 468,
+        "growth": 88
+      },
+      {
+        "cls": "대리점",
+        "ratio": 12,
+        "qty_cy": 302,
+        "qty_py": 163,
+        "growth": 185
+      },
+      {
+        "cls": "직영점",
+        "ratio": 5,
+        "qty_cy": 119,
+        "qty_py": 58,
+        "growth": 205
+      },
+      {
+        "cls": "온라인",
+        "ratio": 2,
+        "qty_cy": 56,
+        "qty_py": 169,
+        "growth": 33
+      },
+      {
+        "cls": "샵인샵",
+        "ratio": 0,
+        "qty_cy": 0,
+        "qty_py": 0,
+        "growth": 0
+      },
+      {
+        "cls": "기타",
+        "ratio": 0,
+        "qty_cy": 0,
+        "qty_py": 0,
+        "growth": 0
+      }
+    ]
+  }
 }
