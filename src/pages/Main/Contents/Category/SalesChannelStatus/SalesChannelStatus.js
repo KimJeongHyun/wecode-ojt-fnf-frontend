@@ -7,8 +7,11 @@ import { convertKey } from '../../../../../utils/Functions';
 import { keyValue } from './constants/key';
 import SalesChannelTable from './SalesChannelTable';
 import SalesChannelChart from './SalesChannelChart';
+import { useRecoilState } from 'recoil';
+import { staticData } from '../../../../../atom/staticData';
 
 export default function SalesChannelStatus() {
+  const [fullData] = useRecoilState(staticData);
   const [data, setData] = useState();
   const [renderedData, setRenderedData] = useState('서브카테고리');
   const contentType = {
@@ -19,17 +22,23 @@ export default function SalesChannelStatus() {
     유통: 'weeklyDistribution',
   };
 
+  // useEffect(() => {
+  //   axios
+  //     .get('./data/mockData.json')
+  //     .then(res => {
+  //       return convertKey(res.data, keyValue);
+  //     })
+  //     .then(res => {
+  //       setData({ ...res });
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []); // 의존성 배열은 전역상태로 변경하기
   useEffect(() => {
-    axios
-      .get('./data/mockData.json')
-      .then(res => {
-        return convertKey(res.data, keyValue);
-      })
-      .then(res => {
-        setData({ ...res });
-      })
-      .catch(err => console.log(err));
-  }, []); // 의존성 배열은 전역상태로 변경하기
+    let temp = convertKey(fullData, keyValue);
+    console.log(fullData);
+    console.log(convertKey(fullData, keyValue));
+    setData({ ...temp });
+  }, [fullData]); // 의존성 배열은 전역상태로 변경하기
 
   const changeDisplayData = event => {
     setRenderedData(event.target.value);
@@ -41,9 +50,10 @@ export default function SalesChannelStatus() {
         <TitleSpan>주간 판매 현황</TitleSpan>
       </PageTitle>
       <ContentOptionBox>
-        {Object.keys(contentType).map(option => {
+        {Object.keys(contentType).map((option, idx) => {
           return (
             <ContentBtn
+              key={idx}
               renderedData={renderedData}
               onClick={changeDisplayData}
               value={option}
@@ -57,47 +67,20 @@ export default function SalesChannelStatus() {
         (contentType[renderedData] !== 'weeklyStyle' ? (
           <InnerContainer>
             <SalesChannelTable
-              staticData={data[[contentType[renderedData]] + 'Table']}
+              data={data[[contentType[renderedData]] + 'Table']}
             />
             <SalesChannelChart
-              staticData={data[[contentType[renderedData]] + 'Timeseries']}
+              data={data[[contentType[renderedData]] + 'Timeseries']}
             />
           </InnerContainer>
         ) : (
           <InnerContainer>
             <SalesChannelTable
               onlyTable={true}
-              staticData={data[[contentType[renderedData]] + 'Table']}
+              data={data[[contentType[renderedData]] + 'Table']}
             />
           </InnerContainer>
         ))}
-
-      {/* {data &&
-        dataType1.map((type1, idx) => {
-          if (type1 !== 'weeklyStyle') {
-            return (
-              <InnerContainer>
-                <SalesChannelTable
-                  key={idx}
-                  staticData={data[type1 + 'Table']}
-                />
-                <SalesChannelChart
-                  key={idx}
-                  staticData={data[type1 + 'Timeseries']}
-                />
-              </InnerContainer>
-            );
-          } else {
-            return (
-              <InnerContainer>
-                <SalesChannelTable
-                  key={idx}
-                  staticData={data[type1 + 'Table']}
-                />
-              </InnerContainer>
-            );
-          }
-        })} */}
     </OuterContainer>
   );
 }

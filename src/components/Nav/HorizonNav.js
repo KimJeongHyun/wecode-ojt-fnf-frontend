@@ -58,6 +58,7 @@ const HorizonNav = () => {
         .then(res => {
           setStatData(prev => {
             prevStat[DATANAME[idx]] = res.data;
+            console.log(prevStat);
             return { ...prevStat };
           });
           setDataLoadedCount(current => {

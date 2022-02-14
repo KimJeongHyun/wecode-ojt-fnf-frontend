@@ -13,15 +13,15 @@ import {
 } from 'recharts';
 import chartColor from './theme/chartColor';
 
-export default function SalesChannelChart({ staticData }) {
-  const legendName = Object.keys(staticData[0]);
+export default function SalesChannelChart({ data }) {
+  const legendName = data.length !== 0 ? Object.keys(data[0]) : [];
   legendName.shift();
   //여기서 staticData는 각 정보객체가 요소로 들어있는 배열이다
   return (
     <CustomCard>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={staticData}
+          data={data}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid

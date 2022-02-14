@@ -16,19 +16,6 @@ export function clickBoolean(setState) {
 export function dataStringFormatter(price) {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
-
-export function convertKeyName(obj, convertRef) {
-  let resultObj = {};
-
-  Object.keys(obj).forEach(item => {
-    convertRef[item]
-      ? (resultObj[convertRef[item]] = obj[item])
-      : (resultObj[item] = obj[item]);
-  });
-
-  return resultObj;
-}
-
 export function convertKey(target, ref) {
   let result = {};
 

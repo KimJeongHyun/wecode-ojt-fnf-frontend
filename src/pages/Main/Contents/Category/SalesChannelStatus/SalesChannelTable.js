@@ -13,7 +13,7 @@ import {
   Paper,
 } from '@material-ui/core';
 
-export default function SalesChannelTable({ onlyTable, staticData }) {
+export default function SalesChannelTable({ onlyTable, data }) {
   return (
     <CustomCard onlyTable={onlyTable}>
       <CustomTableContainer component={Paper}>
@@ -24,33 +24,35 @@ export default function SalesChannelTable({ onlyTable, staticData }) {
             }}
           >
             <TableRow>
-              {Object.keys(staticData[0]).map((key, idx) => {
-                return (
-                  <CustomCell className="headCell" align="left" key={idx}>
-                    {key}
-                  </CustomCell>
-                );
-              })}
+              {data.length !== 0 &&
+                Object.keys(data[0]).map((key, idx) => {
+                  return (
+                    <CustomCell className="headCell" align="left" key={idx}>
+                      {key}
+                    </CustomCell>
+                  );
+                })}
             </TableRow>
           </TableHead>
           <CustomTableBody>
-            {staticData.map((dataObj, idx1) => {
+            {data.map((dataObj, idx1) => {
               {
                 return (
                   <TableRow key={idx1}>
-                    {Object.values(dataObj).map((value, idx2) => {
-                      if (typeof value === 'string') {
-                        return value.includes('http') ? (
-                          <CustomCell key={idx2}>
-                            <ProductImg src={value} alt="Product" />
-                          </CustomCell>
-                        ) : (
-                          <CustomCell key={idx2}>{value}</CustomCell>
-                        );
-                      } else {
-                        return <CustomCell key={idx2}>{value}</CustomCell>;
-                      }
-                    })}
+                    {data.length !== 0 &&
+                      Object.values(dataObj).map((value, idx2) => {
+                        if (typeof value === 'string') {
+                          return value.includes('http') ? (
+                            <CustomCell key={idx2}>
+                              <ProductImg src={value} alt="Product" />
+                            </CustomCell>
+                          ) : (
+                            <CustomCell key={idx2}>{value}</CustomCell>
+                          );
+                        } else {
+                          return <CustomCell key={idx2}>{value}</CustomCell>;
+                        }
+                      })}
                   </TableRow>
                 );
               }
