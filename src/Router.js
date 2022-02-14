@@ -4,7 +4,6 @@ import WithNav from './components/NavOutlet/WithNav';
 import WithoutNav from './components/NavOutlet/WithoutNav';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Main from './pages/Main/Main';
-
 const MAIN_CONTENTS_PATH = ['/category', '/styleranking'];
 
 export default function Router() {

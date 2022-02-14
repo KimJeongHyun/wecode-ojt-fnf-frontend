@@ -9,31 +9,28 @@ import {
   Paper,
 } from '@material-ui/core';
 
-const data = [
-  {
-    term_cls: '당해',
-    int_stock_qty: 47164,
-    stor_qty_kor_term: 0,
-    sale_qty_w: 2030,
-    avg_4wk_sale_qty: 1811.0,
-    stock_kor: 45091,
-    woi_4wks: 25.0,
-  },
-  {
-    term_cls: '전년',
-    int_stock_qty: 32956,
-    stor_qty_kor_term: 1320,
-    sale_qty_w: 1097,
-    avg_4wk_sale_qty: 458.0,
-    stock_kor: 32878,
-    woi_4wks: 72.0,
-  },
-];
+// const data = [
+//   {
+//     term_cls: '당해',
+//     int_stock_qty: 47164,
+//     stor_qty_kor_term: 0,
+//     sale_qty_w: 2030,
+//     avg_4wk_sale_qty: 1811.0,
+//     stock_kor: 45091,
+//     woi_4wks: 25.0,
+//   },
+//   {
+//     term_cls: '전년',
+//     int_stock_qty: 32956,
+//     stor_qty_kor_term: 1320,
+//     sale_qty_w: 1097,
+//     avg_4wk_sale_qty: 458.0,
+//     stock_kor: 32878,
+//     woi_4wks: 72.0,
+//   },
+// ];
 
-export default function UserTable() {
-  // const [page, setPage] = useState(0);
-  // const [rowsPerPage, setRowsPerPage] = useState(10);
-
+export default function UserTable({ data }) {
   return (
     <TableWrapper component={Paper}>
       판매 실적 요약 (주간)

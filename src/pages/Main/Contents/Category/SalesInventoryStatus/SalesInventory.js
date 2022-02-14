@@ -5,17 +5,53 @@ import SalesInventoryTable from './SalesInventoryTable';
 import SalesPerformanceTable from './SalesPerformanceTable';
 import SalesPerformanceSeasonTable from './SalesPerformanceSeasonTable';
 import styled from 'styled-components';
+import { useRecoilState } from 'recoil';
+import { staticData } from '../../../../../atom/staticData';
 
 export default function SalesInventory() {
+  const [atomStaticData, setAtomStaticData] = useRecoilState(staticData);
+
   return (
     <InventoryWrapper>
       <LeftWrapper>
-        <ContentCard children={<SalesInventoryChart />} />
-        <ContentCard children={<SalesInventoryTable />} />
+        <WrapperOne>
+          <ContentCard
+            children={
+              <SalesInventoryChart
+                data={atomStaticData.salesWeeklySummary.data}
+              />
+            }
+          />
+        </WrapperOne>
+        <WrapperTwo>
+          <ContentCard
+            children={
+              <SalesInventoryTable
+                data={atomStaticData.salesWeeklySummary.data}
+              />
+            }
+          />
+        </WrapperTwo>
       </LeftWrapper>
       <RightWrapper>
-        <ContentCard children={<SalesPerformanceTable />} />
-        <ContentCard children={<SalesPerformanceSeasonTable />} />
+        <WrapperThree>
+          <ContentCard
+            children={
+              <SalesPerformanceTable
+                data={atomStaticData.salesSummaryAcc.data}
+              />
+            }
+          />
+        </WrapperThree>
+        <WrapperFour>
+          <ContentCard
+            children={
+              <SalesPerformanceSeasonTable
+                data={atomStaticData.salesSummaryAccSesn.data}
+              />
+            }
+          />
+        </WrapperFour>
       </RightWrapper>
     </InventoryWrapper>
   );
@@ -42,4 +78,48 @@ const RightWrapper = styled.div`
   width: 52%;
   height: 46%;
   gap: 2vh;
+`;
+
+const WrapperOne = styled.div`
+  /* :hover {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 1325px;
+    height: 750px;
+    position: fixed;
+  } */
+`;
+
+const WrapperTwo = styled.div`
+  /* :hover {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 1325px;
+    height: 750px;
+    position: fixed;
+  } */
+`;
+
+const WrapperThree = styled.div`
+  /* :hover {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 1325px;
+    height: 750px;
+    position: fixed;
+  } */
+`;
+
+const WrapperFour = styled.div`
+  /* :hover {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 1325px;
+    height: 750px;
+    position: fixed;
+  } */
+`;
+
+const Frame = styled.div`
+  overflow: hidden;
 `;
