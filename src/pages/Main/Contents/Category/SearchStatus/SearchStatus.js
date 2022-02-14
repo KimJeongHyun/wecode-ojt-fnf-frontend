@@ -15,17 +15,21 @@ export default function SearchStatus() {
       <PageTitle title="마켓검색량" />
       <SearchDataViews>
         <TableWrapper>
-          <CustomCard children={<SearchWeeklyTable />} />
-          <CustomCard children={<SearchSelectedTable />} />
+          <UpperWrapper>
+            <CustomContentCard children={<SearchWeeklyTable />} />
+          </UpperWrapper>
+          <BottomWrapper>
+            <CustomContentCard children={<SearchSelectedTable />} />
+          </BottomWrapper>
         </TableWrapper>
         <ChartWrapper>
-          <NormalOwnChartWrapper>
-            <CustomCard children={<SearchNormalChart />} />
-            <CustomCard children={<SearchOwnChart />} />
-          </NormalOwnChartWrapper>
-          <CompetitorChartWrapper>
-            <CustomCard children={<SearchCompetitorChart />} />
-          </CompetitorChartWrapper>
+          <UpperWrapper>
+            <CustomContentCard children={<SearchNormalChart />} />
+            <CustomContentCard children={<SearchOwnChart />} />
+          </UpperWrapper>
+          <BottomWrapper>
+            <CustomContentCard children={<SearchCompetitorChart />} />
+          </BottomWrapper>
         </ChartWrapper>
       </SearchDataViews>
     </Wrapper>
@@ -49,26 +53,28 @@ const SearchDataViews = styled.div`
 const TableWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 30vw;
   gap: 2vh;
 `;
 
 const ChartWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60vw;
   gap: 2vh;
 `;
 
-const NormalOwnChartWrapper = styled.div`
+const CustomContentCard = styled(Card)`
+  padding: 0;
+`;
+
+const UpperWrapper = styled.div`
   display: flex;
-  height: 49%;
+  height: 46%;
   gap: 2vw;
 `;
 
-const CompetitorChartWrapper = styled.div`
+const BottomWrapper = styled.div`
   display: flex;
-  height: 45%;
-`;
-
-const CustomCard = styled(Card)`
-  background-color: blue;
+  height: 46%;
 `;

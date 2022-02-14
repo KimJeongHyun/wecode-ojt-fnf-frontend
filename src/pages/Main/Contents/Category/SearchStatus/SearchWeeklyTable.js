@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-import { BiDotsHorizontalRounded } from 'react-icons/bi';
+import { CgMenuRight } from 'react-icons/cg';
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { dataStringFormatter } from '../../../../../utils/Functions';
@@ -10,6 +10,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHead,
   TableRow,
   Paper,
 } from '@material-ui/core';
@@ -97,41 +98,38 @@ const SearchCountTable = [
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 500,
+    maxWidth: '100%',
   },
 });
 
 export default function SearchWeeklyTable() {
   const classes = useStyles();
-
   return (
     <Scrollbars
-      autoHideTimeout={500}
+      autoHideTimeout={1000}
       autoHide
       autoHeight
-      autoHeightMin={`${42}vh`}
+      autoHeightMin={`${40}vh`}
     >
-      <TableWrapper component={Paper}>
+      <TableWrapper>
         <TableTitle>
           주간
-          <BiDotsHorizontalRounded />
+          <CgMenuRight />
         </TableTitle>
-        <Table className={classes.table} aria-label="customized table">
-          {/* <TableHeads> */}
+        <CustomTable className={classes.table} aria-label="customized table">
           <TableRow>
-            <TableHeaderCell>브랜드</TableHeaderCell>
-            <TableHeaderCell align="right">당해검색량</TableHeaderCell>
-            <TableHeaderCell align="right">전년검색량</TableHeaderCell>
-            <TableHeaderCell align="right">전년비</TableHeaderCell>
+            <TableRowCell width="15%">브랜드</TableRowCell>
+            <TableRowCell align="right">당해검색량</TableRowCell>
+            <TableRowCell align="right">전년검색량</TableRowCell>
+            <TableRowCell align="right">전년비</TableRowCell>
           </TableRow>
-          {/* </TableHeads> */}
           <TableBody>
             {SearchCountTable.map(
               ({ competitor, growth, search_qty_cy, search_qty_py }) => {
                 const convertedCy = dataStringFormatter(search_qty_cy);
                 const convertedPy = dataStringFormatter(search_qty_py);
                 return (
-                  <TableRow key={competitor}>
+                  <StyledTableRow key={competitor}>
                     <StyledTableCell component="th" scope="row">
                       {competitor}
                     </StyledTableCell>
@@ -142,48 +140,74 @@ export default function SearchWeeklyTable() {
                     <StyledTableCell align="right">
                       {convertedPy}
                     </StyledTableCell>
-                  </TableRow>
+                  </StyledTableRow>
                 );
               }
             )}
           </TableBody>
-        </Table>
+        </CustomTable>
       </TableWrapper>
     </Scrollbars>
   );
 }
 
 const TableWrapper = styled.div`
-  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;
+
+const CustomTable = styled(Table)`
+  position: relative;
+  height: 100%;
+`;
+
 const TableTitle = styled.div`
   display: flex;
+  flex-basis: 10%;
+  position: sticky;
+  top: 0;
   justify-content: space-between;
-  padding: 24px 24px 24px 14px;
+  padding: 24px 24px 24px 24px;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 800;
   color: white;
   background-color: #377ef9;
   border-radius: 7px 7px 0 0;
+  z-index: 2;
+  svg:hover {
+    cursor: pointer;
+  }
 `;
 
-const StyledTableCell = withStyles({
-  root: {
-    color: '#31415F',
-    fontSize: '16px',
-  },
-})(TableCell);
-
-// const TableHeads = withStyles({
-//   root: {
-//     backgroundColor: '#377EF9',
-//   },
-// })(MuiTableHead);
-
-const TableHeaderCell = withStyles(theme => ({
+const TableRowCell = withStyles({
   root: {
     fontSize: '16px',
     color: '#31415F',
     fontWeight: 700,
+    borderBottom: '1px solid #efefef',
   },
-}))(TableCell);
+})(TableCell);
+
+const StyledTableCell = withStyles({
+  root: {
+    fontSize: '16px',
+    color: '#31415F',
+    borderBottom: '1px solid #efefef',
+
+    '&:hover': {
+      cursor: 'pointer',
+      color: 'white',
+    },
+  },
+})(TableCell);
+
+const StyledTableRow = withStyles({
+  root: {
+    '&:hover': {
+      cursor: 'pointer',
+      backgroundColor: '#377ef9',
+      fontcolor: 'white',
+    },
+  },
+})(TableRow);

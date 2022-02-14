@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { CgMenuRight } from 'react-icons/cg';
+
 import {
   LineChart,
+  Area,
   Line,
   XAxis,
   YAxis,
@@ -9,12 +12,13 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  ComposedChart,
 } from 'recharts';
 
-const PERIOD = [
-  { name: '당해', stroke: '#00b374' },
-  { name: '전년', stroke: '#ffd688' },
-];
+// const PERIOD = [
+//   { name: '당해', stroke: '#377EF9' },
+//   { name: '전년', stroke: '#d261ff' },
+// ];
 
 const data = [
   {
@@ -304,18 +308,35 @@ export default function SearchNormalChart() {
     );
   }, []);
 
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <CustomTooltips>
+          <Label>{`${label} / MLB : ${payload[1].value}`}</Label>
+          {payload.map(item => (
+            <DataKeys key="end_dt">{`${item.dataKey} : ${item.value}`}</DataKeys>
+          ))}
+        </CustomTooltips>
+      );
+    }
+    return null;
+  };
+
   return (
     <ChartWrapper>
-      <ChartTitle>일반 검색어</ChartTitle>
+      <ChartTitle>
+        일반 검색어
+        <CgMenuRight />
+      </ChartTitle>
       {normalChart && (
         <ResponsiveContainer width="100%" height="90%">
-          <LineChart
+          <ComposedChart
             data={normalChart}
             margin={{
-              top: 50,
+              top: 20,
               right: 20,
-              left: 20,
-              bottom: 50,
+              left: 10,
+              bottom: 70,
             }}
           >
             <CartesianGrid horizontal={false} stroke="#efefef" />
@@ -331,32 +352,64 @@ export default function SearchNormalChart() {
               tick={{ fontSize: 12 }}
               tickLine={{ stroke: 'none' }}
               stroke="#7b7b7b"
-              dx={-12}
+              dx={-6}
               axisLine={false}
+              // hide={true}
             />
             <Legend
               verticalAlign="top"
-              iconSize={0}
-              iconType="plainline"
+              iconSize={10}
+              iconType="circle"
               align="left"
               wrapperStyle={{
-                left: 0,
+                left: 22,
                 top: -10,
-                fontSize: 12,
+                fontSize: 16,
               }}
             />
-            <Tooltip />
-            {PERIOD.map(item => (
-              <Line
+            <Tooltip content={<CustomTooltip />} />
+            <Area
+              type="monotone"
+              dataKey="전년"
+              stroke="#5877ad"
+              strokeWidth={2.2}
+              fillOpacity={1}
+              fill="url(#LastYear)"
+            />
+            <Area
+              type="monotone"
+              dataKey="당해"
+              stroke="#377ef9"
+              strokeWidth={2.2}
+              fillOpacity={1}
+              fill="url(#ThisYear)"
+            />
+
+            <defs>
+              <linearGradient id="ThisYear" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#377ef9" stopOpacity={0.7} />
+                <stop offset="95%" stopColor="#377ef9" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <defs>
+              <linearGradient id="LastYear" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#5877ad" stopOpacity={0.1} />
+                <stop offset="95%" stopColor="#5877ad" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            {/* {PERIOD.map(item => (
+              <Area
                 key=""
                 dataKey={item.name}
                 stroke={item.stroke}
                 dot={false}
                 type="monotone"
                 strokeWidth={2}
+                activeDot={{ r: 7 }}
+                fill="url(#NormalChart)"
               />
-            ))}
-          </LineChart>
+            ))} */}
+          </ComposedChart>
         </ResponsiveContainer>
       )}
     </ChartWrapper>
@@ -364,20 +417,44 @@ export default function SearchNormalChart() {
 }
 
 const ChartWrapper = styled.div`
-  width: 26vw;
+  width: 29vw;
   height: 100%;
-  /* padding: 20px; */
 `;
 
 const ChartTitle = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 24px 24px 24px 14px;
+  padding: 24px 24px 24px 24px;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 800;
   color: white;
   background-color: #377ef9;
   border-radius: 7px 7px 0 0;
   margin-bottom: 30px;
-  /* font-size: 18px; */
+
+  svg:hover {
+    cursor: pointer;
+  }
+`;
+
+const CustomTooltips = styled.div`
+  background-color: #06183a;
+  border: 1px solid #efefef;
+  border-radius: 7px;
+  /* color: white; */
+  padding: 16px;
+`;
+
+const Label = styled.p`
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+`;
+
+const DataKeys = styled.div`
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  color: #6391f4;
 `;
