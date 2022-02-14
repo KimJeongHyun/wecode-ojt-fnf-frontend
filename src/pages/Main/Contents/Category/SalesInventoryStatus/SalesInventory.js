@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil';
 import { staticData } from '../../../../../atom/staticData';
 
 export default function SalesInventory() {
-  const [atomStaticData, setAtomStaticData] = useRecoilState(staticData);
+  const [atomStaticData] = useRecoilState(staticData);
 
   return (
     <InventoryWrapper>
@@ -118,8 +118,4 @@ const WrapperFour = styled.div`
     height: 750px;
     position: fixed;
   } */
-`;
-
-const Frame = styled.div`
-  overflow: hidden;
 `;

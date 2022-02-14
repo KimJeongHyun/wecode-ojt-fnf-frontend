@@ -33,8 +33,12 @@ export default function SalesInventoryChart({ selfComp, data }) {
           >
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="end_dt" fontSize={12} />
-            <YAxis />
-            <YAxis yAxisId="right" orientation="right" />
+            <YAxis domain={[0, 'data-max']} />
+            <YAxis
+              domain={[0, 'data-max']}
+              yAxisId="right"
+              orientation="right"
+            />
             <Tooltip />
 
             <Bar dataKey="search_qty_cy" barSize={20} fill="pink" />

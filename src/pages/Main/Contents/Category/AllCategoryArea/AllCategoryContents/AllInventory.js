@@ -1,16 +1,21 @@
 import { useContext } from 'react';
+
+import { staticData } from '../../../../../../atom/staticData';
+import { useRecoilValue } from 'recoil';
+
 import { AllCategoryContext } from '../AllCategoryArea';
+
+import styled from 'styled-components';
 
 import ContentCard from '../../../../../../components/ContentCard/ContentCard';
 import SalesInventoryChart from './Inventory/SalesInventoryChart';
 import SalesInventoryTable from './Inventory/SalesInventoryTable';
 
-import styled from 'styled-components';
-
-import { SearchStatusData } from '../AllMockDatas';
-
 export default function AllInventory() {
   const { isZoomInClicked } = useContext(AllCategoryContext);
+
+  const atomStaticData = useRecoilValue(staticData);
+  const { data } = atomStaticData.salesWeeklySummary;
 
   return (
     <InventoryWrapper>
@@ -18,12 +23,8 @@ export default function AllInventory() {
         <ContentCard
           children={
             <SalesInventoryTable
-              selfComp={
-                <SalesInventoryTable
-                  data={SearchStatusData.InventorySummaryData}
-                />
-              }
-              data={SearchStatusData.InventorySummaryData}
+              selfComp={<SalesInventoryTable data={data} />}
+              data={data}
             />
           }
         />
@@ -32,10 +33,8 @@ export default function AllInventory() {
         <ContentCard
           children={
             <SalesInventoryChart
-              selfComp={
-                <SalesInventoryChart data={SearchStatusData.InventoryChart} />
-              }
-              data={SearchStatusData.InventoryChart}
+              selfComp={<SalesInventoryChart data={data} />}
+              data={data}
             />
           }
         />

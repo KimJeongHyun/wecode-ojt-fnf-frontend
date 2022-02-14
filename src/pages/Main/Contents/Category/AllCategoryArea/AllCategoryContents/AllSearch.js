@@ -1,14 +1,15 @@
-import ContentCard from '../../../../../../components/ContentCard/ContentCard';
+import { useContext } from 'react';
 
 import { staticData } from '../../../../../../atom/staticData';
 import { useRecoilValue } from 'recoil';
 
+import { AllCategoryContext } from '../AllCategoryArea';
+
 import styled from 'styled-components';
 
+import ContentCard from '../../../../../../components/ContentCard/ContentCard';
 import SearchCharts from './Search/SearchCharts';
 import AllSearchCompetitorChart from './Search/AllSearchCompetitorChart';
-import { useContext } from 'react';
-import { AllCategoryContext } from '../AllCategoryArea';
 
 export default function AllSearch() {
   const { isZoomInClicked } = useContext(AllCategoryContext);
@@ -16,6 +17,7 @@ export default function AllSearch() {
   const atomStaticData = useRecoilValue(staticData);
   const competitorChartData =
     atomStaticData.searchCountTimeseriesCompetitors.data;
+
   return (
     <SearchWrapper>
       <SearchCompetitorWrapper isZoomInClicked={isZoomInClicked}>

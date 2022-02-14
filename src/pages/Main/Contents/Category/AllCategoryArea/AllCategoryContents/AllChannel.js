@@ -3,7 +3,6 @@ import { useRecoilValue } from 'recoil';
 
 import styled from 'styled-components';
 
-// import { SearchStatusData } from '../AllMockDatas';
 import AllSalesChannelChart from './Channel/AllSalesChannelChart';
 import AllSalesChannelTable from './Channel/AllSalesChannelTable';
 
