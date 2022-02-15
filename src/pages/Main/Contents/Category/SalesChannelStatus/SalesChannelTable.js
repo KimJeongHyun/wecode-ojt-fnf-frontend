@@ -84,6 +84,7 @@ const CustomCard = styled(Card)`
 
 const CustomTableContainer = styled(TableContainer)`
   && {
+    border-radius: 10px !important;
     height: 100%;
     width: 100%;
   }
