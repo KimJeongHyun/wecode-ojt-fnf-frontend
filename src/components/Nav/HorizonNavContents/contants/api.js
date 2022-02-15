@@ -24,10 +24,10 @@ export const API = [
 
 export const DATANAME = [
   'weeklySubcategoryTimeseries',
-  'weeklySubcategoryTable',
   'weeklyDomainTimeseries',
   'weeklyDomainTable',
   'weeklyStyleTable',
+  'weeklySubcategoryTable',
   'weeklyChannelTimeseries',
   'weeklyChannelTable',
   'weeklyDistributionTimeseries',
