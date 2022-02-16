@@ -23,6 +23,11 @@ export const staticData = atom({
   },
 });
 
+export const checkedFilters = atom({
+  key: 'checkedFilters',
+  default: { category: [], domain: [], item: [], season: [], adult: [] },
+});
+
 export const isDataLoaded = atom({
   key: 'isDataLoaded',
   default: false,
