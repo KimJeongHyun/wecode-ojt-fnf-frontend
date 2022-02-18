@@ -25,6 +25,7 @@ export const TreeWrapper = styled.div`
 
 export const TreeInnerWrapper = styled.div`
   width: 100%;
+  height: 100%;
   padding: 1px 0;
   flex-basis: ${props =>
     props.name === '카테고리'

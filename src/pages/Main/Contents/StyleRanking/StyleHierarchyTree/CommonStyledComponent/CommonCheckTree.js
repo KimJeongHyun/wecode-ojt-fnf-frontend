@@ -32,7 +32,7 @@ const icons = {
 };
 
 export default function CommonCheckTree({ name, data, checkExpandObj }) {
-  const nodes = [{ value: name, label: name, children: data.categories }];
+  const nodes = [{ value: name, label: name, children: data }];
   const { checked, expanded, setChecked, setExpanded } = checkExpandObj;
 
   return (

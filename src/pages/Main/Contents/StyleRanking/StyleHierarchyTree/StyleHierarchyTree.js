@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { HierarchyContext } from '../StyleRanking';
+
+import axiosInstance from '../StyleRankingAPI/baseAxios';
 
 import styled from 'styled-components';
 
@@ -11,14 +13,21 @@ import useTreeChecked from '../hook/useTreeChecked';
 export const TreeContext = React.createContext();
 
 export default function StyleHierarchyTree() {
+  const [allTreeData, setAllTreeData] = useState({});
   const { isExpand, handleTreeExpand, expandCondition } =
     useContext(HierarchyContext);
 
   const { treeCheckMethods } = useTreeChecked();
 
+  useEffect(() => {
+    axiosInstance({ url: 'category-list/style-ranking?brand=M' })
+      .then(res => setAllTreeData(res))
+      .catch(err => alert(err));
+  }, []);
+
   return (
     <TreeWrapper isExpand={expandCondition}>
-      <TreeContext.Provider value={{ treeCheckMethods }}>
+      <TreeContext.Provider value={{ treeCheckMethods, allTreeData }}>
         <CategoryDomainWrapper isExpand={isExpand}>
           {isExpand['카테고리'] ? (
             <CategoryDomain />
