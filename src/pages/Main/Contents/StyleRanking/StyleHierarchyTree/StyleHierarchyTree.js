@@ -20,15 +20,15 @@ export default function StyleHierarchyTree() {
   const { treeCheckMethods } = useTreeChecked();
 
   useEffect(() => {
-    axiosInstance({ url: 'category-list/style-ranking?brand=M' })
-      .then(res => setAllTreeData(res))
-      .catch(err => alert(err));
+    // axiosInstance({ url: 'category-list/style-ranking?brand=M' })
+    //   .then(res => setAllTreeData(res))
+    //   .catch(err => alert(err));
   }, []);
 
   return (
     <TreeWrapper isExpand={expandCondition}>
       <TreeContext.Provider value={{ treeCheckMethods, allTreeData }}>
-        <CategoryDomainWrapper isExpand={isExpand}>
+        {/* <CategoryDomainWrapper isExpand={isExpand}>
           {isExpand['카테고리'] ? (
             <CategoryDomain />
           ) : (
@@ -45,7 +45,7 @@ export default function StyleHierarchyTree() {
               아이템 / 시즌
             </ItemExpand>
           )}
-        </ItemSeasonWrapper>
+        </ItemSeasonWrapper> */}
       </TreeContext.Provider>
     </TreeWrapper>
   );
