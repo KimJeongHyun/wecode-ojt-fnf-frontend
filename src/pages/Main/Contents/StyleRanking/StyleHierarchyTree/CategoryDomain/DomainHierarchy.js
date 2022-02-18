@@ -1,5 +1,5 @@
-import { TreeInnerWrapper } from '../CommonStyledComponent/CommonStyle';
+import EachHierarchy from './EachHierarchy';
 
 export default function DomainHierarchy() {
-  return <TreeInnerWrapper name="카테고리">asdf</TreeInnerWrapper>;
+  return <EachHierarchy name="domains" />;
 }

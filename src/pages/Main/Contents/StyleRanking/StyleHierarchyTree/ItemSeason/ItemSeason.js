@@ -3,9 +3,11 @@ import { HierarchyContext } from '../../StyleRanking';
 
 import { HideTree, TreeWrapper } from '../CommonStyledComponent/CommonStyle';
 
-import Age from './Age';
-import Item from './Item';
-import Season from './Season';
+import AgeHierarchy from './AgeHierarchy';
+
+import ItemHierarchy from './ItemHierarchy';
+
+import SeasonHierarchy from './SeasonHierarchy';
 
 export default function ItemSeason() {
   const { handleTreeExpand } = useContext(HierarchyContext);
@@ -14,9 +16,9 @@ export default function ItemSeason() {
       <HideTree name="아이템시즌" onClick={handleTreeExpand}>
         아이템시즌
       </HideTree>
-      <Season />
-      <Item />
-      <Age />
+      <SeasonHierarchy />
+      <ItemHierarchy />
+      <AgeHierarchy />
     </TreeWrapper>
   );
 }
